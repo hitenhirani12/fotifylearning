@@ -55,15 +55,17 @@ const TestimonialsCarousel = () => {
   };
 
   return (
-    <div className="py-24 px-36 bg-gradient-to-b from-gray-900 to-transparent text-white flex ">
-      <div className='flex flex-col p-8'>
-        <h2 className="text-6xl mb-6 w-3/4">Words from our users</h2>
-        <p> We're proud of our satisfied customers. Hear what our users have to say about their
-          experiences with SkillAdvance's Salesforce and ServiceMax training</p>
-        <div className="flex space-x-4 mt-14">
+    <div className="py-24 px-4 md:px-12 lg:px-36 bg-gradient-to-b from-gray-900 to-transparent text-white flex flex-col md:flex-row">
+      {/* Text and Buttons Section */}
+      <div className="flex flex-col p-8 md:w-1/2">
+        <h2 className="text-6xl mb-6 w-full text-center md:text-left">Words from our users</h2>
+        <p className='text-center md:text-left'>We're proud of our satisfied customers. Hear what our users have to say about their experiences with SkillAdvance's Salesforce and ServiceMax training</p>
+        
+        {/* Navigation buttons */}
+        <div className="flex space-x-4 mt-14 md:mt-8 justify-center md:justify-start">
           <button
             onClick={handlePrev}
-            className="p-4 bg-black border rounded-full hover:[filter:invert(100%)] duration-300"
+            className="p-4 bg-black border rounded-full hover:[filter:invert(100%)] duration-300 "
           >
             <MdKeyboardArrowLeft />
           </button>
@@ -75,8 +77,10 @@ const TestimonialsCarousel = () => {
           </button>
         </div>
       </div>
+
+      {/* Testimonial Content Section */}
       <div
-        className="w-full flex justify-end cursor-pointer"
+        className="w-full flex justify-center md:justify-end mt-8 md:mt-0 cursor-pointer"
         onMouseDown={handleDrag}
       >
         <div className="relative p-4 bg-gray-900 border border-gray-700 rounded-lg shadow-lg">
@@ -90,13 +94,12 @@ const TestimonialsCarousel = () => {
             </div>
           </div>
           <p className="text-gray-300 mt-8">{testimonials[currentIndex].text}</p>
-          <div className='mt-12 absolute left-4 bottom-6 flex items-center gap-4'>
-            <div className='p-3 bg-pink-700 rounded-3xl'>
+          <div className="mt-12 flex items-center gap-4">
+            <div className="p-3 bg-pink-700 rounded-3xl">
               <VscQuote />
             </div>
-            <div className='flex flex-col '>
-              <span>{testimonials[currentIndex].name}
-              </span>
+            <div className="flex flex-col">
+              <span>{testimonials[currentIndex].name}</span>
               <span>{testimonials[currentIndex].title}</span>
             </div>
           </div>

@@ -6,17 +6,17 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 function Footer() {
     return (
         <footer className="text-white mt-20 p-8">
-            <div className="container flex flex-col gap-20 mx-auto px-6">
+            <div className="container mx-auto px-6">
                 {/* Top Row: Logo and Social Media Icons */}
-                <div className="flex justify-between items-center border-b border-gray-800 p-6">
+                <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start border-b border-gray-800 p-6">
                     {/* Logo */}
-                    <div className="text-xl font-bold">
+                    <div className="text-xl font-bold mb-4 sm:mb-0">
                         {/* Replace with actual logo */}
                         <img src="https://img.securityinfowatch.com/files/base/cygnus/siw/image/2022/11/Cybrary_logo.636d1736d4f10.png?auto=format,compress&fit=fill&fill=blur&w=1200&h=630" alt="Cybrary Logo" className="w-44" />
                     </div>
 
                     {/* Social Media Icons */}
-                    <div className="flex gap-4 ">
+                    <div className="flex flex-wrap gap-4 justify-center sm:justify-start ">
                         <NavLink to="https://facebook.com" target="_blank" rel="noopener noreferrer" className="border bg-gray-900 rounded-full p-2 hover:text-gray-400">
                             <FaFacebook size={20} />
                         </NavLink>
@@ -39,7 +39,7 @@ function Footer() {
                 </div>
 
                 {/* Navigation Links */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div className="flex flex-wrap justify-between gap-4 text-sm mt-6">
                     <div>
                         <h3 className="font-semibold mb-2 text-2xl">Solutions</h3>
                         <ul>
@@ -118,12 +118,11 @@ function Footer() {
                     </div>
                 </div>
 
-
                 {/* Bottom Row: Terms & Privacy */}
-                <div className="mt-6 flex gap-8 text-center text-sm text-gray-500">
-                    <NavLink to="/privacy-policy" className="hover:underline mb-4 text-lg text-gray-400">Privacy Policy</NavLink>
-                    <NavLink to="/terms-of-service" className="hover:underline mb-4 text-lg text-gray-400">Terms of Service</NavLink>
-                    <p className="hover:underline mb-4 text-lg text-gray-400">Cybrary, Inc. © 2024</p>
+                <div className="mt-6 flex flex-col sm:flex-row gap-8 text-center sm:text-left text-sm text-gray-500">
+                    <NavLink to="/privacy-policy" className="hover:underline mb-4 sm:mb-0 text-lg text-gray-400">Privacy Policy</NavLink>
+                    <NavLink to="/terms-of-service" className="hover:underline mb-4 sm:mb-0 text-lg text-gray-400">Terms of Service</NavLink>
+                    <p className="hover:underline mb-4 sm:mb-0 text-lg text-gray-400">Cybrary, Inc. © 2024</p>
                 </div>
             </div>
         </footer>

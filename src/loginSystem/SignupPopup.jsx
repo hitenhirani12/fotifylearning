@@ -36,7 +36,8 @@ function SignupPopup() {
             {/* Popup Form */}
             {showPopup && (
                 <div className="fixed top-0 left-0 w-full h-full bg-black/50 bg-opacity-75 flex items-center justify-center z-50">
-                    <div className="bg-gray-900 px-12 rounded-lg shadow-xl w-2/3 h-[760px] flex gap-32">
+                    <div className="bg-gray-900 px-12 rounded-lg shadow-xl w-2/3 h-[760px] flex gap-32
+                    ">
                         <div className='w-2/4'>
                             <img className='w-[300px] h-[200px]' src={cybraryLogo} alt="Cybrary Logo" />
                             <h2 className="text-4xl text-white mb-8">Register</h2>

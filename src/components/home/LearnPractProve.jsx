@@ -27,14 +27,14 @@ function LearnPractProve() {
   };
 
   return (
-    <div className="flex mt-8 w-3/4 justify-center gap-20 h-auto text-white p-8 rounded-lg space-x-8">
+    <div className="flex flex-col lg:flex-row mt-8 w-full justify-center gap-20 h-auto text-white py-8 px-4 sm:px-10 md:px-40 rounded-lg space-y-8 lg:space-y-0 lg:space-x-8">
       {/* Left Section with Image */}
-      <div className="w-[1200px] ">
+      <div className="w-full lg:w-[800px]">
         <img src={content[selectedTab].image} alt={content[selectedTab].title} className="rounded-lg w-full h-auto" />
       </div>
 
       {/* Right Section with Navigation and Content */}
-      <div className="w-2/3 space-y-8 py-8">
+      <div className="w-full lg:w-1/2 space-y-8 py-8">
         {/* Sidebar Navigation */}
         <div className="space-y-6">
           {Object.keys(content).map((key) => (
@@ -77,7 +77,6 @@ function LearnPractProve() {
           ))}
         </div>
       </div>
-
     </div>
   );
 }
