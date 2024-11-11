@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+@layer utilities {
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  
+    .animate-slide {
+      animation: slide 10s linear infinite;
+    }
+  
+    .pause-on-hover:hover .animate-slide {
+      animation-play-state: paused;
+    }
+  } */
