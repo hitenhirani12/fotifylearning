@@ -6,28 +6,30 @@ import { VscQuote } from "react-icons/vsc";
 
 const testimonials = [
   {
-    name: 'MADIRAJU PRANAY KASHYAP',
-    title: 'Programmer Analyst Trainee',
+    name: 'Jamal O.',
+    title: 'Student',
     text: 'I was unsure how to begin my Salesforce career path, but FortifyLearning made it clear. I enrolled in their comprehensive courses and quickly gained a solid understanding of Salesforce concepts and job roles. The hands-on training and career insights have given me a clear direction and renewed enthusiasm for pursuing my goals in Salesforce. FortifyLearning has truly set me on the right path.',
-    image: 'https://ewh.ieee.org/r10/hyderabad/c/cshc/assets/img/coreteam/pranay.jpeg' // Replace with actual image URL
+    image: 'https://hrf.org/wp-content/uploads/2024/09/Profile-Elle-Ota-V1.png' // Replace with actual image URL
   },
   {
-    name: 'Shraddha Wadighare',
-    title: 'Cybersecurity Enthusiast',
-    text: 'I was hesitant to start with cybersecurity, but Cybrary made the journey easy. The SOC Analyst course taught me essential skills and helped me gain confidence in the field. The instructors were knowledgeable and supportive throughout.',
-    image: 'https://pub-c2c1d9230f0b4abb9b0d2d95e06fd4ef.r2.dev/sites/45/2020/10/Manjusha-CyberSikshaa.jpg' // Replace with actual image URL
+    name: ' João S.',
+    title: 'Salesforce Administrator',
+    text: `Thanks to SkillAdvance, I'm now a more complete professional! Everyone in the Salesforce area should consider enrolling in any SkillAdvance courses.`,
+    image: 'https://plus.unsplash.com/premium_photo-1664203067979-47448934fd97?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZhY2V8ZW58MHx8MHx8fDA%3D' // Replace with actual image URL
   },
   {
-    name: 'RAHUL SHARMA',
-    title: 'Network Security Engineer',
-    text: 'The SOC Analyst Level 2 course exceeded my expectations. The labs were practical, and the course content was very relevant to real-world scenarios. I would highly recommend Cybrary to anyone serious about advancing their cybersecurity career.',
-    image: 'https://networthier.com/celebs/wp-content/uploads/2016/06/Rahul-Sharma-Net-Worth.jpg' // Replace with actual image URL
+    name: 'Justin B.',
+    title: 'Salesforce Specialist',
+    text: 'The interviewer said the certifications and training I had completed on my own time showed that I was a quick learner, and they gave me a job offer.',
+    image: 'https://b2647861.smushcdn.com/2647861/wp-content/uploads/2024/03/justin-featured-image.jpg?lossy=1&strip=1&webp=1' // Replace with actual image URL
   },
   {
-    name: 'PRIYA AGARWAL',
-    title: 'Information Security Analyst',
-    text: 'Cybrary’s courses have been instrumental in my career development. The "Become a SOC Analyst" course was challenging yet rewarding, providing me with skills that I could apply immediately in my job. The community support was also fantastic!',
-    image: 'https://m.economictimes.com/thumb/msid-98479543,width-1200,height-900,resizemode-4,imgsize-71192/change-doesnt-always-happen-overnight-says-priya-agarwal-hebbar-.jpg' // Replace with actual image URL
+    name: 'Katie Adams',
+    title: 'Senior Director',
+    text: `Our partnership with SkillAdvance has given us the opportunity to provide world-class training
+ materials at no cost to our clients, thanks to the funding we’ve received. SkillAdvance offers a
+ proven method for building a more skilled Salesforce workforce.`,
+    image: 'https://media.licdn.com/dms/image/v2/D4E03AQH8WfpjGrGNYQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1710973087043?e=2147483647&v=beta&t=Lu45-cG1HNmBl_2dapPztGUWkpYpOGqtmX6s4fOIMkw' // Replace with actual image URL
   }
   // Add more testimonials as needed
 ];
@@ -60,7 +62,7 @@ const TestimonialsCarousel = () => {
       <div className="flex flex-col p-8 md:w-1/2">
         <h2 className="text-6xl mb-6 w-full text-center md:text-left">Words from our users</h2>
         <p className='text-center md:text-left'>We're proud of our satisfied customers. Hear what our users have to say about their experiences with SkillAdvance's Salesforce and ServiceMax training</p>
-        
+
         {/* Navigation buttons */}
         <div className="flex space-x-4 mt-14 md:mt-8 justify-center md:justify-start">
           <button

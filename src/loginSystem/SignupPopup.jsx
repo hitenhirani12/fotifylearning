@@ -35,42 +35,41 @@ function SignupPopup() {
         <div>
             {/* Popup Form */}
             {showPopup && (
-                <div className="fixed top-0 left-0 w-full h-full bg-black/50 bg-opacity-75 flex items-center justify-center z-50">
-                    <div className="bg-gray-900 px-12 rounded-lg shadow-xl w-2/3 h-[760px] flex gap-32
-                    ">
-                        <div className='w-2/4'>
-                            <img className='w-[300px] h-[200px]' src={cybraryLogo} alt="Cybrary Logo" />
-                            <h2 className="text-4xl text-white mb-8">Register</h2>
-                            <p className="text-gray-400 mb-6 text-xl">
+                <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50 overflow-y-auto">
+                    <div className="bg-gray-900 p-8 rounded-lg shadow-xl w-full max-w-3xl h-full md:h-[760px] overflow-y-auto flex flex-col md:flex-row gap-8 md:gap-16">
+                        <div className='w-full md:w-1/2 flex flex-col items-center md:items-start'>
+                            <img className='w-[150px] md:w-[300px] h-auto mb-4 md:mb-8' src={cybraryLogo} alt="Cybrary Logo" />
+                            <h2 className="text-2xl md:text-4xl text-white mb-4 md:mb-8">Register</h2>
+                            <p className="text-gray-400 mb-4 md:mb-6 text-center md:text-left text-lg">
                                 Join over <span className="font-semibold text-white">3 million</span> cybersecurity professionals advancing their career.
                             </p>
 
                             {/* Social Media Signup */}
-                            <p className="text-gray-400 mb-12 text-xl ">or sign up with</p>
-                            <div className="flex gap-4 mb-6">
+                            <p className="text-gray-400 mb-4 text-center md:text-left text-lg">or sign up with</p>
+                            <div className="flex gap-2 md:gap-4 mb-4 justify-center md:justify-start">
                                 <button className="bg-white p-2 rounded-lg">
-                                    <img className='h-8' src="https://lh3.googleusercontent.com/qnaJEbFIpvsWJm2KrRI_GIvz1yZdXntgEsCZxy-1pVZi244bCk1RFwdk0ZBRmmvdHiUl6sIa_tsmskL5WLKiigp2AMsIIxinOJNf39qCmacViRGXIOY" alt="Google"  />
+                                    <img className='h-6 md:h-8' src="https://lh3.googleusercontent.com/qnaJEbFIpvsWJm2KrRI_GIvz1yZdXntgEsCZxy-1pVZi244bCk1RFwdk0ZBRmmvdHiUl6sIa_tsmskL5WLKiigp2AMsIIxinOJNf39qCmacViRGXIOY" alt="Google" />
                                 </button>
                                 <button className="bg-white p-2 rounded-lg">
-                                    <img className='h-8' src="https://static.vecteezy.com/system/resources/previews/019/136/322/non_2x/amazon-logo-amazon-icon-free-free-vector.jpg" alt="Apple"  />
+                                    <img className='h-6 md:h-8' src="https://static.vecteezy.com/system/resources/previews/019/136/322/non_2x/amazon-logo-amazon-icon-free-free-vector.jpg" alt="Apple" />
                                 </button>
                                 <button className="bg-white p-2 rounded-lg">
-                                    <img className='h-8' src="https://static-00.iconduck.com/assets.00/microsoft-icon-1024x1024-5w26drb6.png" alt="Microsoft"  />
+                                    <img className='h-6 md:h-8' src="https://static-00.iconduck.com/assets.00/microsoft-icon-1024x1024-5w26drb6.png" alt="Microsoft" />
                                 </button>
                                 <button className="bg-white p-2 rounded-lg">
-                                    <img className='h-8' src="https://banner2.cleanpng.com/20180712/jrc/aaw6si4mt.webp" alt="Facebook"  />
+                                    <img className='h-6 md:h-8' src="https://banner2.cleanpng.com/20180712/jrc/aaw6si4mt.webp" alt="Facebook" />
                                 </button>
                                 <button className="bg-white p-2 rounded-lg">
-                                    <img className='h-8' src="https://i.pinimg.com/736x/b2/f8/28/b2f828513f21444829a619ce563d4d4e.jpg" alt="LinkedIn"  />
+                                    <img className='h-6 md:h-8' src="https://i.pinimg.com/736x/b2/f8/28/b2f828513f21444829a619ce563d4d4e.jpg" alt="LinkedIn" />
                                 </button>
                             </div>
                         </div>
 
-                        <div className='flex w-1/2 flex-col py-4 my-8 h-4/4 '>
+                        <div className='w-full md:w-1/2 flex flex-col'>
                             {/* Email and Password Fields */}
-                            <form >
+                            <form>
                                 <div className="mb-4">
-                                    <label htmlFor="email" className="block text-xl font-medium text-white mb-2">Email Address*</label>
+                                    <label htmlFor="email" className="block text-lg font-medium text-white mb-2">Email Address*</label>
                                     <input
                                         type="email"
                                         id="email"
@@ -80,7 +79,7 @@ function SignupPopup() {
                                     />
                                 </div>
                                 <div className="mb-4">
-                                    <label htmlFor="password" className="block text-xl font-medium text-white mb-2">Password*</label>
+                                    <label htmlFor="password" className="block text-lg font-medium text-white mb-2">Password*</label>
                                     <input
                                         type="password"
                                         id="password"
@@ -92,7 +91,7 @@ function SignupPopup() {
                                 </div>
 
                                 {/* Password Requirements */}
-                                <div className="mb-4 flex text-white items-center text-xl gap-4" onClick={toggleRequirements}>
+                                <div className="mb-4 flex items-center text-white text-lg gap-2 cursor-pointer" onClick={toggleRequirements}>
                                     <FaRegQuestionCircle /> See Password Requirements
                                     {showRequirements ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />}
                                 </div>
@@ -143,14 +142,16 @@ function SignupPopup() {
                             </form>
 
                             <p className="mt-4 text-center text-white font-semibold">
-                                Already have an account? <a href="#" className="text-pink-500">Log In</a>
+                                Already have an account? <a href="#" className="text-pink-500">Sign in</a>
                             </p>
-                            <p className='text-gray-400 text-center mt-8'>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+                            <p className="text-gray-400 text-center mt-8 text-xs md:text-sm">
+                                This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+                            </p>
                             <button
-                                className="mt-4 text-sm text-gray-500 hover:text-pink-500"
+                                className="text-white mt-4 text-center font-bold underline"
                                 onClick={() => dispatch(togglePopup())}
                             >
-                                Cancel
+                                Close Popup
                             </button>
                         </div>
                     </div>

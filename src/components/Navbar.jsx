@@ -1,27 +1,7 @@
 import React, { useState } from 'react';
-import { RiShoppingBag4Line } from "react-icons/ri";
-import { GiSkills } from "react-icons/gi";
-import { PiCertificateBold } from "react-icons/pi";
-import { PiTargetLight } from "react-icons/pi";
-import { PiBrowsersLight } from "react-icons/pi";
-import { RiQuestionAnswerLine } from "react-icons/ri";
-
-import { MdOutlineForum } from "react-icons/md";
-import { BsShieldCheck } from "react-icons/bs";
-import { GiProgression } from "react-icons/gi";
-import { RiTeamFill } from "react-icons/ri";
-import { DiGitCompare } from "react-icons/di";
-import { IoMdPerson } from "react-icons/io";
-
-import { GiTeamIdea } from "react-icons/gi";
-import { GiFamilyHouse } from "react-icons/gi";
-import { TbTargetArrow } from "react-icons/tb";
-import { BiSolidBusiness } from "react-icons/bi";
-import { SiFramework } from "react-icons/si";
-import { MdCompareArrows } from "react-icons/md";
-
 // HamburgerMenu Component
 import HamburgerMenu from './navbar/HamburgerMenu';
+import dropdownData from './navbar/DropDownData';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,40 +10,10 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Sample data for each dropdown (Catalog, For Individuals, etc.)
-  const dropdownData = {
-    catalog: [
-      { icon: <RiShoppingBag4Line className='text-2xl mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.' },
-      { icon: <GiSkills className='text-2xl mr-2' />, name: 'Skill Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.' },
-      { icon: <PiCertificateBold className='text-2xl mr-2' />, name: 'Certification Prep', description: 'Prepare for and maintain leading cybersecurity certifications.' },
-      { icon: <PiTargetLight className='text-2xl mr-2' />, name: 'Mission Readiness', description: 'Learn how to detect and mitigate the latest threats and vulnerabilities.' },
-      { icon: <PiBrowsersLight className='text-2xl mr-2' />, name: 'Browse the Catalog' },
-      { icon: <RiQuestionAnswerLine className='text-2xl mr-2' />, name: 'Instructors' },
-    ],
-    individuals: [
-      { icon: <RiShoppingBag4Line className='text-2xl mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.' },
-      { icon: <MdOutlineForum className='text-2xl mr-2' />, name: 'Forums', description: 'Discuss all things cybersecurity for free among the vast Cybrary community.' },
-      { icon: <BsShieldCheck className='text-2xl mr-2' />, name: 'Free Access', description: 'Get a taste of the catalog with certification prep, introductory courses, and more.' },
-      { icon: <GiProgression className='text-2xl mr-2' />, name: 'Insider Pro', description: 'Everything you need to learn, practice, and prove your cybersecurity skills.' },
-      { icon: <RiTeamFill className='text-2xl mr-2' />, name: 'For Teams', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.' },
-      { icon: <DiGitCompare className='text-2xl mr-2' />, name: 'Compare Plans', description: 'Compare features across all plans.' },
-      { icon: <IoMdPerson className='text-2xl mr-2' />, name: 'Individual' },
-    ],
-    business: [
-      { icon: <GiTeamIdea className='text-2xl mr-2' />, name: 'Teams Features', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.' },
-      { icon: <GiFamilyHouse className='text-2xl mr-2' />, name: 'For Government', description: 'Support your organization with a custom plan that works for your organization.' },
-      { icon: <TbTargetArrow className='text-2xl mr-2' />, name: 'Mission Readiness', description: 'Learn how to detect and mitigate the latest threats and vulnerabilities.' },
-      { icon: <BiSolidBusiness className='text-2xl mr-2' />, name: 'Business Resources', description: 'Learn how Cybrary can help your team thrive.' },
-      { icon: <SiFramework className='text-2xl mr-2' />, name: 'Framework Alignment', description: 'Learn how Cybrary aligns to established industry frameworks.' },
-      { icon: <MdCompareArrows className='text-2xl mr-2' />, name: 'Teams Pricing', description: 'Compare features across all plans.' },
-      { icon: <RiTeamFill className='text-2xl mr-2' />, name: 'Teams' },
-    ]
-  };
-
   return (
     <>
-      
-<nav className="flex justify-between items-center px-6 py-6 w-full fixed bg-black z-20">
+
+      <nav className="flex justify-between items-center px-6 py-6 w-full fixed bg-black z-20">
         {/* Left Side: Logo */}
         <div className="flex items-center gap-10">
           <img
@@ -114,25 +64,58 @@ const Navbar = () => {
                 </ul>
               </div>
             </li>
+
             {/* For Business Dropdown */}
-            <li className="relative group text-[18px] cursor-pointer flex items-center p-4  ">
+            <li className="relative group text-[18px] cursor-pointer flex items-center p-4">
               For Business <i className="fa-solid fa-angle-down ml-1"></i>
               <div className="absolute -left-10 hidden group-hover:block bg-gray-900 text-white border p-4 z-10 w-[360px] mt-[630px] rounded-lg">
                 <ul className="space-y-1">
                   {dropdownData.business.map((item, index) => (
-                    <li key={index} className="flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center">
-                      <div>
-                        {item.icon}
-                      </div>
+                    <li
+                      key={index}
+                      className="relative flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center group"
+                    >
+                      <div>{item.icon}</div>
                       <div>
                         <p className="font-bold">{item.name}</p>
                         <p className="text-sm">{item.description}</p>
+
+                        {/* Show subitems only when hovering over the item */}
+                        {item.subItems && (
+                          <div className="absolute left-full top-0 hidden group-hover:block bg-gray-800 text-white border p-4 w-[240px] rounded-lg z-20">
+                            <ul className="space-y-1">
+                              {item.subItems.map((subitem, subIndex) => (
+                                <li
+                                  key={subIndex}
+                                  className="p-2 hover:bg-gray-700 rounded-lg group relative"
+                                >
+                                  <div className="flex items-center gap-2">
+                                    <div>{subitem.icon}</div>
+                                    <div>
+                                      <p className="font-semibold">{subitem.name}</p>
+                                      <p className="text-xs">{subitem.description}</p>
+
+                                      {/* Nested sub-subitems, show on hover of this specific item */}
+                                      {subitem.moreDetails && (
+                                        <div className="absolute left-full top-0 hidden group-hover:block bg-gray-700 text-white border p-3 w-[180px] rounded-lg z-30">
+                                          <p className="text-sm font-medium">{subitem.moreDetails}</p>
+                                        </div>
+                                      )}
+                                    </div>
+                                  </div>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
                     </li>
                   ))}
                 </ul>
               </div>
             </li>
+
+
             <li className="text-[18px] cursor-pointer flex items-center">Pricing </li>
           </ul>
         </div>

@@ -24,12 +24,12 @@ function SignupComponent() {
                         placeholder="name@email.com"
                         className="w-full p-1 rounded text-xl placeholder-gray-400 focus:outline-none"
                     />
+                    <button
+                        onClick={() => dispatch(togglePopup())}
+                        className="w-full py-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl text-white font-semibold hover:shadow-[0px_0px_10px_purple,0px_0px_10px_#FF4D6D] duration-500 ">
+                        Create a Free Account
+                    </button>
                 </div>
-                <button 
-                    onClick={() => dispatch(togglePopup())}
-                    className="w-full py-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl text-white font-semibold hover:shadow-[0px_0px_10px_purple,0px_0px_10px_#FF4D6D] duration-500 mb-6">
-                    Create a Free Account
-                </button>
                 <SignupPopup />
                 <div className="flex justify-around items-center mt-6">
                     <span className='text-gray-600'>or sign up with</span>
