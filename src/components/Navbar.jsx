@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // HamburgerMenu Component
 import HamburgerMenu from './navbar/HamburgerMenu';
 import dropdownData from './navbar/DropDownData';
-import DropDown from './navbar/DropDown';
+import CustomDropDown from './navbar/CustomDropDown';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* Navigation Links: Desktop View */}
         <div className="hidden w-2/4 md:flex justify-center items-center gap-8">
           <ul className="flex w-full p-2">
-            <DropDown />
+            <CustomDropDown/>
           </ul>
         </div>
 

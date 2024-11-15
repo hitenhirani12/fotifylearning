@@ -1,3 +1,88 @@
-.dropdowns .dropdown{
-    background-color: red;
+/* Target the dropdown container */
+.dropdowns .dropdown-container {
+  color: white;
+  transition: color 0.3s ease-in;
+}
+
+/* Style the dropdown items */
+.dropdowns .dropdown-item {
+  padding: 10px 15px;
+  color: #d5caca;
+  cursor: pointer;
+  max-width: 200px;
+  /* Set according to your needs */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  top: 0;
+  /* Aligns to the top */
+  left: 0;
+  /* Aligns to the left */
+  z-index: 1000;
+}
+
+.dropdown-container:hover {
+  color: #e866f2;
+  /* Change the background color when hovering */
+}
+
+/* Highlight hovered item */
+.dropdowns .dropdown-item:hover {
+  background-color: #3bd929;
+  color: rgb(192, 186, 186);
+}
+
+/* Customize active items */
+.dropdowns .dropdown-item-active {
+  font-weight: bold;
+  color: #e6e9ec;
+}
+
+/* Style submenus */
+.dropdowns .dropdown-submenu {
+  padding-left: 20px;
+}
+
+.dropdowns .dropdown-menu,
+.custom-submenu, .custom-submenu-submenu {
+  background-color: rgb(22, 26, 32);
+  border-radius: 20px;
+  border: 1px solid whitesmoke;
+  width: auto;
+}
+
+.dropdowns .dropdown-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dropdowns .dropdown-item:hover {
+  background-color: #3e3030;
+  /* Gray background on hover */
+  color: black;
+  /* Black text on hover */
+}
+
+.dropdowns .dropdown-item:hover h1,
+.dropdowns .dropdown-item:hover p {
+  color: black;
+  /* Ensure all text inside changes to black */
+}
+
+.dropdowns .dropdown-hover {
+  background-color: transparent;
+}
+
+.dropdowns .dropdown-hover:hover {
+  background-color: rgb(54, 57, 64);
+}
+
+.dropdowns .custom-submenu{
+  padding: 6px;
+  width: 300px;
+}
+
+.dropdowns .custom-submenu-submenu{
+  width: 350px;
 }
