@@ -1,0 +1,74 @@
+<ul className="flex space-x-8">
+            <li className="relative group text-[18px] cursor-pointer flex items-center p-4 ">
+              Catalog <i className="fa-solid fa-angle-down ml-1"></i>
+              <div className="absolute -left-10 hidden group-hover:block bg-gray-900 text-white border p-4 z-10 w-[360px] mt-[520px] rounded-lg">
+                <ul className="space-y-1">
+                  {dropdownData.catalog.map((item, index) => (
+                    <li key={index} className="flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center">
+                      <div>
+                        {item.icon}
+                      </div>
+                      <div>
+                        <p className="font-bold">{item.name}</p>
+                        <p className="text-sm">{item.description}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+
+            <li className="relative group text-[18px] cursor-pointer flex items-center p-4">
+              For Individuals <i className="fa-solid fa-angle-down ml-1"></i>
+              <div className="absolute -left-10 hidden group-hover:block bg-gray-900 text-white border p-4 z-10 w-[360px] mt-[630px] rounded-lg">
+                <ul className="space-y-1">
+                  {dropdownData.individuals.map((item, index) => (
+                    <li key={index} className="flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center">
+                      <div>
+                        {item.icon}
+                      </div>
+                      <div>
+                        <p className="font-bold">{item.name}</p>
+                        <p className="text-sm">{item.description}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+
+            <li className="relative group text-[18px] cursor-pointer flex items-center p-4">
+              For Business <i className="fa-solid fa-angle-down ml-1"></i>
+              <div className="absolute -left-10 hidden group-hover:block bg-gray-900 text-white border p-4 z-10 w-[360px] mt-[630px] rounded-lg">
+                <ul className="space-y-1">
+                  {dropdownData.business.map((item, index) => (
+                    <li
+                      key={index}
+                      className="relative flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center group"
+                    >
+                      <div>{item.icon}</div>
+                      <div>
+                        <p className="font-bold">{item.name}</p>
+                        <p className="text-sm">{item.description}</p>
+                        {/* Sirf current item hover hone par uske subitems show karne ke liye nested group */}
+                        {item.subItems && (
+                          <div className="absolute left-full top-0 hidden group-hover:block bg-gray-800 text-white border p-4 w-[240px] rounded-lg">
+                            <ul className="space-y-1">
+                              {item.subItems.map((subitem, subIndex) => (
+                                <li key={subIndex} className="p-2 hover:bg-gray-700 rounded-lg">
+                                  <p className="font-semibold">{subitem.name}</p>
+                                  <p className="text-xs">{subitem.description}</p>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+
+            <li className="text-[18px] cursor-pointer flex items-center">Pricing </li>
+          </ul>

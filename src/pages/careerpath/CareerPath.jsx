@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../../components/Navbar';
+// import Navbar from '../../components/Navbar';
 import SalesforceCourses from '../../components/careerPath/SalesForceCourses';
 import { IoTvOutline } from "react-icons/io5";
 import { FaLaptopCode } from "react-icons/fa";
@@ -9,12 +9,13 @@ import { PiCertificate } from 'react-icons/pi';
 import { GrGroup } from "react-icons/gr";
 import TestimonialsCarousel from '../../components/home/TestimonialsCarousel';
 import SignupComponent from '../../components/home/SignupComponent';
-import Footer from '../../components/Footer';
+import { Outlet, Link } from 'react-router-dom';
+// import Footer from '../../components/Footer';
 
 function CareerPath() {
     return (
         <div className="bg-black text-white min-h-screen flex flex-col items-center overflow-x-hidden">
-            <Navbar />
+            {/* <Navbar /> */}
             <header className="mt-28 flex flex-col lg:flex-row px-6 md:px-48">
                 <div className="mt-8 xl:mt-40 flex flex-col items-center md:items-start">
                     <h1 className="text-4xl md:text-6xl text-center md:text-left">
@@ -194,9 +195,11 @@ function CareerPath() {
             <div className="w-full mt-24 flex justify-center">
                 <SignupComponent/>
             </div>
-            <div className='w-5/6'>
+            {/* <div className='w-5/6'>
                 <Footer/>
-            </div>
+            </div> */}
+            <Link to="/network">network engineer</Link>
+            <Outlet/>
         </div>
     );
 }

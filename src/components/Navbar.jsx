@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // HamburgerMenu Component
 import HamburgerMenu from './navbar/HamburgerMenu';
 import dropdownData from './navbar/DropDownData';
+import DropDown from './navbar/DropDown';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,6 @@ const Navbar = () => {
 
   return (
     <>
-
       <nav className="flex justify-between items-center px-6 py-6 w-full fixed bg-black z-20">
         {/* Left Side: Logo */}
         <div className="flex items-center gap-10">
@@ -24,99 +24,9 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links: Desktop View */}
-        <div className="hidden md:flex justify-center items-center gap-8">
-          <ul className="flex space-x-8">
-            {/* Catalog Dropdown */}
-            <li className="relative group text-[18px] cursor-pointer flex items-center p-4 ">
-              Catalog <i className="fa-solid fa-angle-down ml-1"></i>
-              <div className="absolute -left-10 hidden group-hover:block bg-gray-900 text-white border p-4 z-10 w-[360px] mt-[520px] rounded-lg">
-                <ul className="space-y-1">
-                  {dropdownData.catalog.map((item, index) => (
-                    <li key={index} className="flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center">
-                      <div>
-                        {item.icon}
-                      </div>
-                      <div>
-                        <p className="font-bold">{item.name}</p>
-                        <p className="text-sm">{item.description}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-            {/* For Individuals Dropdown */}
-            <li className="relative group text-[18px] cursor-pointer flex items-center p-4">
-              For Individuals <i className="fa-solid fa-angle-down ml-1"></i>
-              <div className="absolute -left-10 hidden group-hover:block bg-gray-900 text-white border p-4 z-10 w-[360px] mt-[630px] rounded-lg">
-                <ul className="space-y-1">
-                  {dropdownData.individuals.map((item, index) => (
-                    <li key={index} className="flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center">
-                      <div>
-                        {item.icon}
-                      </div>
-                      <div>
-                        <p className="font-bold">{item.name}</p>
-                        <p className="text-sm">{item.description}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-
-            {/* For Business Dropdown */}
-            <li className="relative group text-[18px] cursor-pointer flex items-center p-4">
-              For Business <i className="fa-solid fa-angle-down ml-1"></i>
-              <div className="absolute -left-10 hidden group-hover:block bg-gray-900 text-white border p-4 z-10 w-[360px] mt-[630px] rounded-lg">
-                <ul className="space-y-1">
-                  {dropdownData.business.map((item, index) => (
-                    <li
-                      key={index}
-                      className="relative flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center group"
-                    >
-                      <div>{item.icon}</div>
-                      <div>
-                        <p className="font-bold">{item.name}</p>
-                        <p className="text-sm">{item.description}</p>
-
-                        {/* Show subitems only when hovering over the item */}
-                        {item.subItems && (
-                          <div className="absolute left-full top-0 hidden group-hover:block bg-gray-800 text-white border p-4 w-[240px] rounded-lg z-20">
-                            <ul className="space-y-1">
-                              {item.subItems.map((subitem, subIndex) => (
-                                <li
-                                  key={subIndex}
-                                  className="p-2 hover:bg-gray-700 rounded-lg group relative"
-                                >
-                                  <div className="flex items-center gap-2">
-                                    <div>{subitem.icon}</div>
-                                    <div>
-                                      <p className="font-semibold">{subitem.name}</p>
-                                      <p className="text-xs">{subitem.description}</p>
-
-                                      {/* Nested sub-subitems, show on hover of this specific item */}
-                                      {subitem.moreDetails && (
-                                        <div className="absolute left-full top-0 hidden group-hover:block bg-gray-700 text-white border p-3 w-[180px] rounded-lg z-30">
-                                          <p className="text-sm font-medium">{subitem.moreDetails}</p>
-                                        </div>
-                                      )}
-                                    </div>
-                                  </div>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-
-
-            <li className="text-[18px] cursor-pointer flex items-center">Pricing </li>
+        <div className="hidden w-2/4 md:flex justify-center items-center gap-8">
+          <ul className="flex w-full p-2">
+            <DropDown />
           </ul>
         </div>
 

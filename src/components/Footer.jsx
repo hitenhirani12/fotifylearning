@@ -5,7 +5,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 function Footer() {
     return (
-        <footer className="text-white mt-20 p-8">
+        <footer className="text-white mt-20 p-8 w-5/6 mx-auto">
             <div className="container mx-auto px-6">
                 {/* Top Row: Logo and Social Media Icons */}
                 <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start border-b border-gray-800 p-6">

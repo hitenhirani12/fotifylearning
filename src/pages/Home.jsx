@@ -3,8 +3,8 @@ import React from "react";
 import '../App.css';
 import Marquee from 'react-fast-marquee';
 
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+// import Navbar from '../components/Navbar';
+// import Footer from '../components/Footer';
 import LearnPractProve from '../components/home/LearnPractProve';
 import AdvanceYourCareer from '../components/home/AdvanceYourCareer';
 import TestimonialsCarousel from "../components/home/TestimonialsCarousel";
@@ -25,7 +25,7 @@ import { VscTypeHierarchySuper } from "react-icons/vsc";
 function Home() {
   return (
     <div className="bg-black text-white min-h-screen flex flex-col items-center overflow-x-hidden">
-      <Navbar />
+      {/* <Navbar /> */}
       <header className="mt-28 flex flex-col lg:flex-row px-6 md:px-48">
         <div className="mt-8 xl:mt-40 flex flex-col items-center md:items-start">
           <h1 className="text-4xl md:text-6xl text-center md:text-left">
@@ -237,9 +237,9 @@ function Home() {
       <div className="w-full mt-24 flex justify-center">
         <SignupComponent />
       </div>
-      <div className="w-5/6">
+      {/* <div className="w-5/6">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }
