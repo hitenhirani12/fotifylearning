@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import fortifyLearning from "../assets/FortifyLearning.png";
 
 import { VscTypeHierarchySuper } from "react-icons/vsc";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
@@ -132,14 +131,14 @@ function MitreAttack() {
             title: "Develop a Plan",
             description:
                 "Create a strategic plan to address cybersecurity challenges by aligning with the MITRE ATT&CK Framework.",
-            image: proveImage,
+            image: 'https://149359217.v2.pressablecdn.com/wp-content/uploads/2019/01/plan-1170x766.jpg',
             icon: <TbListCheck className="text-3xl" />,
         },
         PursueResearch: {
             title: "Pursue Research",
             description:
                 "Explore detailed research and analysis to strengthen your understanding and application of the MITRE ATT&CK Framework.",
-            image: fortifyLearning,
+            image: 'https://images.deccanherald.com/deccanherald%2Fimport%2Fsites%2Fdh%2Ffiles%2Farticleimages%2F2020%2F09%2F29%2Fistock-11271050131-894483-1601348572.jpg?auto=format%2Ccompress&fmt=webp&fit=max&format=webp&q=70&w=400&dpr=2',
             icon: <TbListSearch className="text-3xl" />,
         },
     };
