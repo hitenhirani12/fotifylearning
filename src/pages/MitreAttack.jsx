@@ -1,10 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-
-// Sample images (replace with your actual images)
-// import learnImage from "../assets/learnImage.png";
-// import practiceImage from "../assets/practiceImage.png";
-import proveImage from "../assets/proveImage.png";
 import fortifyLearning from "../assets/FortifyLearning.png";
 
 import { VscTypeHierarchySuper } from "react-icons/vsc";
