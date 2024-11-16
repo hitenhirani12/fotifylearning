@@ -195,10 +195,6 @@ function CareerPath() {
             <div className="w-full mt-24 flex justify-center">
                 <SignupComponent/>
             </div>
-            {/* <div className='w-5/6'>
-                <Footer/>
-            </div> */}
-            <Link to="/network">network engineer</Link>
             <Outlet/>
         </div>
     );

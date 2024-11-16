@@ -470,7 +470,7 @@ function CustomDropDown() {
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='track-actor-campaign/double-trouble-with-double-dragon' className='flex items-center'>
+                                    <Link to='threat-actor-campaign/double-trouble-with-double-dragon' className='flex items-center'>
                                         <div>
                                             <h1 className='text-lg text-white'>Double trouble with Double <br />dragon
                                             </h1>
@@ -478,7 +478,7 @@ function CustomDropDown() {
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='track-actor-campaign/weak-link-in-the-supply-chain' className='flex items-center'>
+                                    <Link to='threat-actor-campaign/weak-link-in-the-supply-chain' className='flex items-center'>
                                         <div>
                                             <h1 className='text-lg text-white'>Weak link in the Supply chain
                                             </h1>
@@ -486,7 +486,7 @@ function CustomDropDown() {
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='track-actor-campaign/spinning-a-web-shell-for-initial-access' className='flex items-center'>
+                                    <Link to='threat-actor-campaign/spinning-a-web-shell-for-initial-access' className='flex items-center'>
                                         <div>
                                             <h1 className='text-lg text-white'>Spinning a web shell for initial <br />access
                                             </h1>
@@ -494,7 +494,7 @@ function CustomDropDown() {
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg items-center'>
-                                    <Link to='track-actor-campaign/exfiltration-and-extortion' className='flex items-center'>
+                                    <Link to='threat-actor-campaign/exfiltration-and-extortion' className='flex items-center'>
                                         <div>
                                             <h1 className='text-lg text-white'>Exfiltration and Extortion
                                             </h1>

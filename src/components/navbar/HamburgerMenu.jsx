@@ -10,31 +10,32 @@ import { IoMdPerson } from "react-icons/io";
 import { TbTargetArrow } from "react-icons/tb";
 import { BiSolidBusiness } from "react-icons/bi";
 import { SiFramework } from "react-icons/si";
+import { NavLink } from 'react-router-dom';
 
 const dropdownData = {
     catalog: [
-        { icon: <RiShoppingBag4Line className='text-2xl mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.' },
-        { icon: <GiSkills className='text-2xl mr-2' />, name: 'Skill Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.' },
-        { icon: <PiCertificateBold className='text-2xl mr-2' />, name: 'Certification Prep', description: 'Prepare for and maintain leading cybersecurity certifications.' },
-        { icon: <PiTargetLight className='text-2xl mr-2' />, name: 'Mission Readiness', description: 'Learn how to detect and mitigate the latest threats and vulnerabilities.' },
-        { icon: <PiBrowsersLight className='text-2xl mr-2' />, name: 'Browse the Catalog' },
-        { icon: <RiQuestionAnswerLine className='text-2xl mr-2' />, name: 'Instructors' },
+        { icon: <RiShoppingBag4Line className='text-2xl mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/career-path' },
+        { icon: <GiSkills className='text-2xl mr-2' />, name: 'Skill Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/skill-paths' },
+        { icon: <PiCertificateBold className='text-2xl mr-2' />, name: 'Certification Prep', description: 'Prepare for and maintain leading cybersecurity certifications.', link: '/certifications' },
+        { icon: <PiTargetLight className='text-2xl mr-2' />, name: 'Mission Readiness', description: 'Learn how to detect and mitigate the latest threats and vulnerabilities.', link: '/mitre-attack' },
+        { icon: <PiBrowsersLight className='text-2xl mr-2' />, name: 'Browse the Catalog', link: '/catalog' },
+        { icon: <RiQuestionAnswerLine className='text-2xl mr-2' />, name: 'Instructors', link: '/instructor' },
     ],
     individuals: [
-        { icon: <RiShoppingBag4Line className='text-2xl mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.' },
-        { icon: <MdOutlineForum className='text-2xl mr-2' />, name: 'Forums', description: 'Discuss all things cybersecurity for free among the vast Cybrary community.' },
-        { icon: <BsShieldCheck className='text-2xl mr-2' />, name: 'Free Access', description: 'Get a taste of the catalog with certification prep, introductory courses, and more.' },
-        { icon: <GiProgression className='text-2xl mr-2' />, name: 'Insider Pro', description: 'Everything you need to learn, practice, and prove your cybersecurity skills.' },
-        { icon: <RiTeamFill className='text-2xl mr-2' />, name: 'For Teams', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.' },
-        { icon: <DiGitCompare className='text-2xl mr-2' />, name: 'Compare Plans', description: 'Compare features across all plans.' },
-        { icon: <IoMdPerson className='text-2xl mr-2' />, name: 'Individual' },
+        { icon: <RiShoppingBag4Line className='text-2xl mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/career-path' },
+        { icon: <MdOutlineForum className='text-2xl mr-2' />, name: 'Forums', description: 'Discuss all things cybersecurity for free among the vast Cybrary community.', link: '/?ref=wwwnav4indv' },
+        { icon: <BsShieldCheck className='text-2xl mr-2' />, name: 'Free Access', description: 'Get a taste of the catalog with certification prep, introductory courses, and more.', link: '/free-content' },
+        { icon: <GiProgression className='text-2xl mr-2' />, name: 'Insider Pro', description: 'Everything you need to learn, practice, and prove your cybersecurity skills.', link: '/cybrary-insider-pro' },
+        { icon: <RiTeamFill className='text-2xl mr-2' />, name: 'For Teams', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.', link: '/business' },
+        { icon: <DiGitCompare className='text-2xl mr-2' />, name: 'Compare Plans', description: 'Compare features across all plans.', link: '/upgrade' },
+        { icon: <IoMdPerson className='text-2xl mr-2' />, name: 'Individual', },
     ],
     business: [
-        { icon: <GiTeamIdea className='text-2xl mr-2' />, name: 'Teams Features', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.' },
-        { icon: <GiFamilyHouse className='text-2xl mr-2' />, name: 'For Government', description: 'Support your organization with a custom plan that works for your organization.' },
-        { icon: <TbTargetArrow className='text-2xl mr-2' />, name: 'Mission Readiness', description: 'Learn how to detect and mitigate the latest threats and vulnerabilities.' },
-        { icon: <BiSolidBusiness className='text-2xl mr-2' />, name: 'Business Resources', description: 'Learn how Cybrary can help your team thrive.' },
-        { icon: <SiFramework className='text-2xl mr-2' />, name: 'Framework Alignment', description: 'Learn how Cybrary aligns to established industry frameworks.' },
+        { icon: <GiTeamIdea className='text-2xl mr-2' />, name: 'Teams Features', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.', link: '/business' },
+        { icon: <GiFamilyHouse className='text-2xl mr-2' />, name: 'For Government', description: 'Support your organization with a custom plan that works for your organization.', link: '/government' },
+        { icon: <TbTargetArrow className='text-2xl mr-2' />, name: 'Mission Readiness', description: 'Learn how to detect and mitigate the latest threats and vulnerabilities.', link: '/mitre-attack' },
+        { icon: <BiSolidBusiness className='text-2xl mr-2' />, name: 'Business Resources', description: 'Learn how Cybrary can help your team thrive.', link: '/business-resources', link: '/industry' },
+        { icon: <SiFramework className='text-2xl mr-2' />, name: 'Framework Alignment', description: 'Learn how Cybrary aligns to established industry frameworks.', link: '/upgrade?team=true' },
         { icon: <MdCompareArrows className='text-2xl mr-2' />, name: 'Teams Pricing', description: 'Compare features across all plans.' },
         { icon: <RiTeamFill className='text-2xl mr-2' />, name: 'Teams' },
     ]
@@ -77,13 +78,15 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                         {openDropdown === 'catalog' && (
                             <ul className="pl-4 mt-2 space-y-2 text-white">
                                 {dropdownData.catalog.map((item, index) => (
-                                    <li key={index} className="flex gap-2 p-2 hover:bg-gray-800 rounded-lg items-start">
-                                        {item.icon}
-                                        <div>
-                                            <p className="font-bold">{item.name}</p>
-                                            {item.description && <p className="text-sm">{item.description}</p>}
-                                        </div>
-                                    </li>
+                                    <NavLink to={item.link}>
+                                        <li key={index} className="flex gap-2 p-2 hover:bg-gray-800 rounded-lg items-start">
+                                            {item.icon}
+                                            <div>
+                                                <p className="font-bold">{item.name}</p>
+                                                {item.description && <p className="text-sm">{item.description}</p>}
+                                            </div>
+                                        </li>
+                                    </NavLink>
                                 ))}
                             </ul>
                         )}
@@ -96,6 +99,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                         {openDropdown === 'individuals' && (
                             <ul className="pl-4 mt-2 space-y-2 text-white">
                                 {dropdownData.individuals.map((item, index) => (
+                                <NavLink to={item.link}>
                                     <li key={index} className="flex gap-2 p-2 hover:bg-gray-800 rounded-lg items-start">
                                         {item.icon}
                                         <div>
@@ -103,6 +107,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                                             {item.description && <p className="text-sm">{item.description}</p>}
                                         </div>
                                     </li>
+                                </NavLink>
                                 ))}
                             </ul>
                         )}
@@ -115,6 +120,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                         {openDropdown === 'business' && (
                             <ul className="pl-4 mt-2 space-y-2 text-white">
                                 {dropdownData.business.map((item, index) => (
+                                    <NavLink to={item.link}>
                                     <li key={index} className="flex gap-2 p-2 hover:bg-gray-800 rounded-lg items-start">
                                         {item.icon}
                                         <div>
@@ -122,6 +128,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                                             {item.description && <p className="text-sm">{item.description}</p>}
                                         </div>
                                     </li>
+                                    </NavLink>
                                 ))}
                             </ul>
                         )}

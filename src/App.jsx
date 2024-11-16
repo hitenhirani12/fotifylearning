@@ -8,6 +8,10 @@ import About from "./pages/About";
 import SignupPopup from "./loginSystem/SignupPopup";
 import CareerPath from "./pages/careerpath/CareerPath";
 import NetworkEngineer from "./pages/careerpath/NetworkEngineer";
+import SupplyChain from "./pages/mission/threat/SupplyChain";
+import CouchDBRCE from "./pages/course/CouchDBRCE";
+import MitreAttack from "./pages/MitreAttack";
+import Alliances from "./pages/Alliances";
 
 function App() {
   return (
@@ -22,7 +26,11 @@ function App() {
             <Route path="/career-path" element={<CareerPath />}/>
           {/* </Routes> */}
 
-          <Route path="career-path/network" element={<NetworkEngineer/>}/>
+          <Route path="career-path/network-engineer" element={<NetworkEngineer/>}/>
+          <Route path="threat-actor-campaign/weak-link-in-the-supply-chain" element={<SupplyChain/>}/>
+          <Route path="course/cve-series-couchdb-rce-cve-2022-24706" element={<CouchDBRCE/>}/>
+          <Route path="/mitre-attack" element={<MitreAttack/>}/>
+          <Route path="/alliances" element={<Alliances/>}/>
         </Route>
       </Routes>
       <Footer /> {/* Footer constant rahega har page ke liye */}

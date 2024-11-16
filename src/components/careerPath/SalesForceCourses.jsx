@@ -89,7 +89,7 @@ const salesforceCourses = [
 
 function SalesforceCourses() {
     return (
-        <div className="mt-20 text-white py-12 px-4 md:px-72 flex flex-col items-center">
+        <div className="mt-20 text-white py-12 px-4 md:px-32 xl:px-72 flex flex-col items-center">
             <h2 className="text-3xl md:text-4xl text-center mb-8">
                 Upskill at <span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600'>Any Stage</span> of Your Career
             </h2>
@@ -100,12 +100,12 @@ function SalesforceCourses() {
                     <div key={index} className="bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-600 ">
                         <img src={course.img} alt="" className='h-[200px] w-full object-cover rounded-lg'/>
                         <div className='p-6'>
-                            <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
+                            <h3 className="text-2xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600">{course.title}</h3>
                             <p className="text-gray-400 mb-4">{course.overview}</p>
-                            <div className="text-sm text-gray-300 mb-1">
-                                <span className="font-semibold">Duration:</span> {course.duration}
+                            <div className="text-gray-300 mb-1 text-lg py-2 px-4 border rounded-xl mb-2 bg-slate-900">
+                                <span className="font-semibold ">Duration:</span> {course.duration}
                             </div>
-                            <div className="text-sm text-gray-300">
+                            <div className="text-lg py-2 px-4 border rounded-xl mb-2 text-gray-300">
                                 <span className="font-semibold">Format:</span> {course.format}
                             </div>
                         </div>

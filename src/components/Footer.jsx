@@ -119,7 +119,7 @@ function Footer() {
                 </div>
 
                 {/* Bottom Row: Terms & Privacy */}
-                <div className="mt-6 flex flex-col sm:flex-row gap-8 text-center sm:text-left text-sm text-gray-500">
+                <div className="mt-12  flex flex-col sm:flex-row gap-8 text-center sm:text-left text-sm text-gray-500">
                     <NavLink to="/privacy-policy" className="hover:underline mb-4 sm:mb-0 text-lg text-gray-400">Privacy Policy</NavLink>
                     <NavLink to="/terms-of-service" className="hover:underline mb-4 sm:mb-0 text-lg text-gray-400">Terms of Service</NavLink>
                     <p className="hover:underline mb-4 sm:mb-0 text-lg text-gray-400">Cybrary, Inc. © 2024</p>
