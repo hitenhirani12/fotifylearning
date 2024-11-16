@@ -15,7 +15,7 @@ import { LiaChalkboardTeacherSolid } from "react-icons/lia";
 import { TbPointFilled } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
 
-import FortifyLearningLogo from '../../assets/FortifyLearning.png';
+import FortifyLearningLogo from '../../assets/fortifyLearning.png';
 
 function CouchDBRCE() {
 
