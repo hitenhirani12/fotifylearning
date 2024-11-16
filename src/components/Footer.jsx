@@ -72,7 +72,7 @@ function Footer() {
                                 Press
                                 <MdOutlineKeyboardArrowRight className='mt-1 ml-2 transition-transform duration-300 transform group-hover:translate-x-1' />
                             </NavLink></li>
-                            <li><NavLink to="/impact" className="flex items-center mb-4 text-lg text-gray-400 hover:text-white group transition-colors">
+                            <li><NavLink to="/practice-lab/log-analysis-basics" className="flex items-center mb-4 text-lg text-gray-400 hover:text-white group transition-colors">
                                 Cybrary Impact Hub
                                 <MdOutlineKeyboardArrowRight className='mt-1 ml-2 transition-transform duration-300 transform group-hover:translate-x-1' />
                             </NavLink></li>

@@ -46,7 +46,7 @@ function CouchDBRCE() {
     };
     return (
         <div className='mt-44 md:w-full'>
-            <div className="flex flex-col md:flex-row items-center justify-center w-full text-white py-8 px-6 sm:px-12 lg:px-44 gap-8 lg:gap-12">
+            <div className="flex flex-col md:flex-row items-center justify-center w-full text-white py-8 px-6 sm:px-12 lg:px-36 gap-8 lg:gap-8">
                 {/* Left Section */}
                 <div className="w-full md:w-1/2 text-center md:text-left flex flex-col">
                     <button className="w-1/4 py-1 bg-gradient-to-r from-red-500 via-pink-500 to-fuchsia-500 rounded-2xl text-white font-semibold mx-auto md:mx-0">
@@ -124,7 +124,7 @@ function CouchDBRCE() {
                     <h2 className="text-2xl md:text-3xl mb-4 sm:mb-6">
                         Create a free account to start exploring the platform.
                     </h2>
-                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full items-center border border-gray-600 px-3 py-2 mb-6 rounded-3xl">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-0 w-full items-center border border-gray-600 px-3 py-2 mb-6 rounded-3xl">
                         <input
                             type="email"
                             placeholder="name@email.com"
@@ -132,7 +132,7 @@ function CouchDBRCE() {
                         />
                         <button
                             onClick={() => dispatch(togglePopup())}
-                            className="w-full sm:w-auto py-2 sm:py-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl text-white font-semibold hover:shadow-[0px_0px_10px_purple,0px_0px_10px_#FF4D6D] duration-500"
+                            className="w-1/2 sm:w-auto py-2 sm:py-2 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl text-white font-semibold hover:shadow-[0px_0px_10px_purple,0px_0px_10px_#FF4D6D] duration-500"
                         >
                             Create a Free Account
                         </button>
@@ -177,7 +177,7 @@ function CouchDBRCE() {
 
             <div className='flex flex-col-reverse lg:flex-row mx-auto mt-32 w-11/12 lg:w-4/5 p-4 gap-12'>
                 <div className='w-full lg:w-2/3'>
-                    <div className='flex flex-wrap justify-between mt-16'>
+                    <div className='flex flex-wrap gap-20 mt-16'>
                         <div className='flex flex-col items-center gap-2'>
                             <h1 className='text-2xl lg:text-3xl'>0H 20M</h1>
                             <span className='text-gray-400 font-semibold'>TIME</span>
