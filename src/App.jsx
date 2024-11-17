@@ -13,6 +13,7 @@ import CouchDBRCE from "./pages/course/CouchDBRCE";
 import MitreAttack from "./pages/MitreAttack";
 import Alliances from "./pages/Alliances";
 import SocAnalyst from "./pages/careerpath/SocAnalyst";
+import Impact from "./pages/Impact";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/alliances" element={<Alliances/>}/>
           <Route path="/career-path/soc-analyst" element={<SocAnalyst/>}/>
           <Route path="/practice-lab/log-analysis-basics" element={<SocAnalyst/>}/>
+          <Route path="/fortifylearning-impact-hub" element={<Impact/>}/>
         </Route>
       </Routes>
       <Footer /> {/* Footer constant rahega har page ke liye */}
