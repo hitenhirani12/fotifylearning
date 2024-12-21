@@ -1,0 +1,452 @@
+  import React, { useState } from "react";
+  import { CiMenuKebab } from "react-icons/ci";
+  import { FaBars, FaSearch, FaUser } from "react-icons/fa";
+  import { MdOutlineTopic } from "react-icons/md";
+  import { AiOutlineMenuUnfold } from "react-icons/ai";
+  import { IoIosArrowDown } from "react-icons/io";
+  import { BiSolidBookmarkAlt, BiSolidRightArrow } from "react-icons/bi";
+  const Forum = () => {
+    const [activeTab, setActiveTab] = useState(null); // Track the active tab
+    const [isCategoryDropdownVisible, setIsCategoryDropdownVisible] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [activeCategory, setActiveCategory] = useState(null);
+    const [isTagDropdownVisible, setIsTagDropdownVisible] = useState(false);
+    const [tagSearchTerm, setTagSearchTerm] = useState('');
+
+    // Categories data
+    const categories = [
+      { category: "Career Paths", total: 4, div: 'bg-fuchsia-400', message: "this is very helpful to your job." },
+      { category: "Cert Prep", total: 2, div: 'bg-blue-400', message: "this is very helpful to your career." },
+      { category: "Stay Ahead", total: 2, div: 'bg-cyan-400', message: "stay updated with industry trends." },
+      { category: "Career Advice", total: 3, div: 'bg-red-400', message: "get expert tips and advice." },
+      { category: "Industry News", total: 1, div: 'bg-green-400', message: "latest news in the industry." }
+    ];
+
+    const tags = ["Learning", "Mentor", "a-plus", "security-plus", "aws-ccp", ];
+
+    const reviews = {
+      "Career Paths": [
+        {
+          topic: "Welcome to Cybrary!",
+          replies: 1,
+          views: "2.5k",
+          activity: "Dec 2023",
+          tags: ["Learning", "Career Paths"]
+        },
+        {
+          topic: "Career Path Task 1",
+          replies: 5,
+          views: "1.1k",
+          activity: "Nov 2023",
+          tags: ["Learning", "Career Paths", "security-plus"]
+        },
+        {
+          topic: "Career Path Insights",
+          replies: 2,
+          views: "500",
+          activity: "Oct 2023",
+          tags: ["Mentor", "Career Paths"]
+        },
+        {
+          topic: "Career Development Tips",
+          replies: 7,
+          views: "3k",
+          activity: "Sep 2023",
+          tags: ["Learning", "Career Advice"]
+        }
+      ],
+      "Cert Prep": [
+        {
+          topic: "Access Control Basics Task 1",
+          replies: 13,
+          views: "399",
+          activity: "6h",
+          tags: ["Cert Prep", "security-plus"]
+        },
+        {
+          topic: "Cert Prep Discussion",
+          replies: 8,
+          views: "800",
+          activity: "3h",
+          tags: ["Cert Prep", "aws-ccp"]
+        }
+      ],
+      "Stay Ahead": [
+        {
+          topic: "Industry Trends 2024",
+          replies: 4,
+          views: "200",
+          activity: "Jan 2024",
+          tags: ["Stay Ahead", "Learning", "Tech"]
+        },
+        {
+          topic: "Tech Innovations",
+          replies: 10,
+          views: "1k",
+          activity: "Dec 2023",
+          tags: ["Stay Ahead", "Mentor"]
+        }
+      ],
+      "Career Advice": [
+        {
+          topic: "How to Advance in Your Career",
+          replies: 12,
+          views: "1.5k",
+          activity: "Feb 2024",
+          tags: ["Career Advice", "Mentor"]
+        },
+        {
+          topic: "Networking Tips",
+          replies: 5,
+          views: "700",
+          activity: "Jan 2024",
+          tags: ["Career Advice", "Learning"]
+        },
+        {
+          topic: "Job Search Strategies",
+          replies: 8,
+          views: "400",
+          activity: "Dec 2023",
+          tags: ["Career Advice", "a-plus"]
+        }
+      ],
+      "Industry News": [
+        {
+          topic: "New Security Vulnerability",
+          replies: 2,
+          views: "5k",
+          activity: "Jan 2024",
+          tags: ["Industry News", "security-plus"]
+        }
+      ]
+    };
+    
+    // Filter categories and tags based on search term
+    const filteredCategories = categories.filter(cate =>
+      cate.category.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    const filteredTags = tags.filter(tag =>
+      tag.toLowerCase().includes(tagSearchTerm.toLowerCase())
+    );
+
+    // Handle tab clicks
+    const handleTabClick = (tab) => {
+      if (tab === "categories") {
+        setIsCategoryDropdownVisible((prev) => !prev); // Toggle category dropdown visibility
+        setIsTagDropdownVisible(false); // Close tags dropdown when categories are clicked
+      } else if (tab === "tags") {
+        setIsTagDropdownVisible((prev) => !prev); // Toggle tags dropdown visibility
+        setIsCategoryDropdownVisible(false); // Close category dropdown when tags are clicked
+      } else {
+        setIsCategoryDropdownVisible(false); // Close dropdowns for other tabs
+        setIsTagDropdownVisible(false);
+      }
+      setActiveTab(tab); // Set active tab
+    };
+
+
+    const handleCategoryClick = (category) => {
+      setActiveCategory(category); // Set the active category
+    };
+
+    return (
+      <div className="bg-gray-800">
+        <header className="py-6 flex justify-between bg-black w-full items-center">
+          <div className="flex items-center space-x-4">
+            <FaBars size={24} />
+            <h1 className="text-2xl font-bold">FortifyLearning</h1>
+          </div>
+          <div className="flex items-center space-x-4">
+            <div className="relative">
+              <FaSearch className="absolute left-3 top-2 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search..."
+                className="bg-gray-800 text-gray-300 pl-10 pr-4 py-2 rounded-lg"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <button className="flex items-center space-x-2 bg-blue-600 px-4 py-2 rounded-lg">
+              <FaUser />
+              <span>Log In</span>
+            </button>
+          </div>
+        </header>
+        <div className="flex bg-gray-900 text-gray-200 pb-6">
+          {/* Sidebar */}
+          <aside className="w-1/4 bg-gray-900 pl-20 pr-4 pt-4">
+            <ul>
+              <li className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800">
+                <MdOutlineTopic /> Topics
+              </li>
+              <li className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800">
+                <CiMenuKebab /> More
+              </li>
+            </ul>
+            <h2 className="flex items-center gap-2 text-lg font-semibold mt-2">
+              <IoIosArrowDown /> Categories
+            </h2>
+            <ul>
+              {categories.map((cate, index) => (
+                <li
+                  key={index}
+                  className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800"
+                >
+                  <div className={`${cate.div} h-3 w-3`}></div>
+                  {cate.category}
+                </li>
+              ))}
+              <li className="text-gray-400 dropdown-hover flex gap-2 py-2 px-4 mb-2 items-center rounded hover:bg-gray-800">
+                <AiOutlineMenuUnfold /> All Categories
+              </li>
+            </ul>
+            <h2 className="flex items-center gap-2 text-lg font-semibold mt-2">
+              <IoIosArrowDown /> Tags
+            </h2>
+            <ul>
+            {tags.map((tag, index) => (
+                <li key={index} className="dropdown-hover flex gap-2 py-2 px-4 items-center rounded hover:bg-gray-800">
+                  <BiSolidBookmarkAlt /> {tag}
+                </li>
+              ))}
+              <li className="text-gray-400 dropdown-hover flex gap-2 py-2 px-4 mb-2 items-center rounded hover:bg-gray-800">
+                <AiOutlineMenuUnfold /> All tags
+              </li>
+            </ul>
+          </aside>
+
+          {/* Main Content */}
+          <main className="flex-1 border-l pr-24 pl-4">
+            {/* Topics */}
+            <section>
+              <ul className="flex py-4 gap-4">
+                {/* Categories */}
+                <li
+                  className={`rounded-lg p-2 flex items-center gap-2 border cursor-pointer ${activeTab === "categories" ? "border-blue-500" : ""}`}
+                  onClick={() => handleTabClick("categories")}
+                >
+                  Categories <BiSolidRightArrow />
+                </li>
+
+                {/* Tags Tab */}
+                <li
+                  className={`rounded-lg p-2 flex items-center gap-2 border cursor-pointer ${activeTab === "tags" ? "border-blue-500" : ""}`}
+                  onClick={() => handleTabClick("tags")}
+                >
+                  Tags <BiSolidRightArrow />
+                </li>
+
+                {/* Latest Tab */}
+                <li
+                  className={`border-b-2 flex items-center ${activeTab === "latest" ? "border-blue-500 text-blue-500" : "border-none"} cursor-pointer`}
+                  onClick={() => handleTabClick("latest")}
+                >
+                  Latest
+                </li>
+
+                {/* Hot Tab */}
+                <li
+                  className={`border-b-2 flex items-center ${activeTab === "hot" ? "border-blue-500 text-blue-500" : "border-none"} cursor-pointer`}
+                  onClick={() => handleTabClick("hot")}
+                >
+                  Hot
+                </li>
+              </ul>
+              {isCategoryDropdownVisible && (
+                <div className="absolute bg-gray-800 rounded-lg shadow-lg mt-2 py-2 px-4">
+                  <input
+                    type="text"
+                    className="w-full p-2 mb-2 rounded-lg bg-gray-900 text-white"
+                    placeholder="Search Categories"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)} // Update search term
+                  />
+                  <ul className="flex flex-col h-42 overflow-y-auto">
+                    {filteredCategories.map((cate, index) => (
+                      <li key={index} className="py-1 px-2 hover:bg-gray-600 rounded-lg cursor-pointer"
+                      onClick={() => handleCategoryClick(cate.category)}>
+                        <h1 className="flex items-center gap-2">
+                          <div className={`${cate.div} h-3 w-3`}></div>
+                          {cate.category} x {cate.total}
+                        </h1>
+                        <div className="text-gray-500">{cate.message}</div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {isTagDropdownVisible && (
+                <div className="absolute bg-gray-700 rounded-lg shadow-lg mt-2 py-2 px-4">
+                  <input
+                    type="text"
+                    className="w-full p-2 mb-2 rounded-lg bg-gray-800 text-white"
+                    placeholder="Search Tags"
+                    value={tagSearchTerm}
+                    onChange={(e) => setTagSearchTerm(e.target.value)} // Update tag search term
+                  />
+                  <ul className="flex flex-col h-42 overflow-y-auto">
+                    {filteredTags.map((tag, index) => (
+                      <li key={index} className="py-1 px-2 hover:bg-gray-600 rounded-lg cursor-pointer">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Table for displaying reviews */}
+              {activeCategory && (
+                <table className="w-full border-collapse mt-4">
+                  <thead>
+                    <tr className="bg-gray-900">
+                      <th className="p-2 text-left">Topic</th>
+                      <th className="p-2">Replies</th>
+                      <th className="p-2">Views</th>
+                      <th className="p-2">Activity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {reviews[activeCategory]?.map((review, index) => (
+                      <tr key={index} className="border-b border-gray-700">
+                        <td className="p-2">{review.topic}</td>
+                        <td className="p-2 text-center">{review.replies}</td>
+                        <td className="p-2 text-center">{review.views}</td>
+                        <td className="p-2 text-center">{review.activity}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </section>
+          </main>
+        </div>
+      </div>
+    );
+  };
+
+  export default Forum;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div className='mt-20 flex w-5/6 mx-auto'>
+                <div className='w-1/3 p-10'>
+                    <h2 className='text-2xl font-bold'>Table of Contents</h2>
+                    <ul className=' list-inside'>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>COLLECTION AND USE OF USER INFORMATION</li>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>INFORMATION COLLECTION TECHNOLOGY</li>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>PERMISSIONS</li>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>CHILDREN UNDER THE AGE OF 13</li>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>SHARING USER INFORMATION</li>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>PROTECTION OF USER INFORMATION</li>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>EXTERNAL LINKS AND THIRD PARTY PRIVACY PRACTICES</li>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>CALIFORNIA PRIVACY RIGHTS</li>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>CONTACT US</li>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>CHANGES TO THIS PRIVACY POLICY</li>
+                        <li className='mt-6 flex flex-wrap text-xl text-gray-400'>COOKIES</li>
+                    </ul>
+                </div>
+                <div className='w-2/3 px-20'>
+                    <p className='text-gray-300 font-semibold'>
+                        This Cybrary, Inc. (“Cybrary”, “us” or “our”) Privacy Policy (“Privacy Policy”) explains our practices, defines our users’ (“you” or “your”) privacy options, and describes how your information is collected and used by Cybrary. This Privacy Policy, along with our
+                        <NavLink to='/terms-of-service' className="text-blue-600 hover:underline">
+                             Terms of Service
+                        </NavLink>,
+                        applies to your use of all Cybrary-branded products and services including your use of our website at 
+                        <NavLink to="/" className="text-blue-600 hover:underline">
+                            www.fortifyLearnig.in
+                        </NavLink>
+                        (“Site”), any services provided by Cybrary, and any web or mobile applications we develop (collectively, our “Platform”). This Privacy Policy explains:
+                    </p>
+                    <ul className='mt-4'>
+                        <li className='text-gray-300 ml-2 mt-2'>the information we collect about you;</li>
+                        <li className='text-gray-300 ml-2 mt-2'>how that information may be used;</li>
+                        <li className='text-gray-300 ml-2 mt-2'>with whom the information may be shared;</li>
+                        <li className='text-gray-300 ml-2 mt-2'>how you may update the information you provide us;</li>
+                        <li className='text-gray-300 ml-2 mt-2'>how you may contact us; and</li>
+                        <li className='text-gray-300 ml-2 mt-2'>your choices about the information.</li>
+                    </ul>
+                    <p className='text-gray-300 mt-4'>By using the Cybrary Platform, you agree to the terms of this Privacy Policy and our Terms of Service.</p>
+                    <h1 className='text-5xl mt-6'>COLLECTION AND USE OF USER INFORMATION</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <p className='text-gray-300 mt-2'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At ab modi repellat.</p>
+                    <p className='text-gray-300 mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nemo repellendus obcaecati?</p>
+                    <p className='text-gray-300 mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet veniam pariatur officia.</p>
+                    <h1 className='text-5xl mt-6'>INFORMATION COLLECTION TECHNOLOGY</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <p className='text-gray-300 mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nemo repellendus obcaecati?</p>
+                    <p className='text-gray-300 mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet veniam pariatur officia.</p>
+                    <h1 className='text-5xl mt-6'>PERMISSIONS</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <h1 className='text-5xl mt-6'>CHILDREN UNDER THE AGE OF 13</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <h1 className='text-5xl mt-6'>SHARING USER INFORMATION</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <p className='text-gray-300 mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nemo repellendus obcaecati?</p>
+                    <p className='text-gray-300 mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet veniam pariatur officia.</p>
+                    <h1 className='text-5xl mt-6'>PROTECTION OF USER INFORMATION</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <h1 className='text-5xl mt-6'>EXTERNAL LINKS AND THIRD PARTY PRIVACY PRACTICES</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <h1 className='text-5xl mt-6'>CALIFORNIA PRIVACY RIGHTS</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <h1 className='text-5xl mt-6'>CONTACT US</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <h1 className='text-5xl mt-6'>CHANGES TO THIS PRIVACY POLICY</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                    <h1 className='text-5xl mt-6'>COOKIES</h1>
+                    <p className='text-gray-300 mt-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit laborum sed!</p>
+                </div>
+            </div>
+
+
+
+
+
+             <ul className='mt-4'>
+                        <li className='text-gray-300 ml-2 mt-2'></li> 
+                        <li className='text-gray-300 ml-2 mt-2'></li> 
+                        <li className='text-gray-300 ml-2 mt-2'></li>
+                        <li className='text-gray-300 ml-2 mt-2'></li>
+                    </ul>

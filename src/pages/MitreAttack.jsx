@@ -116,21 +116,21 @@ function MitreAttack() {
         LearnTheFramework: {
             title: "Learn the Framework",
             description:
-                "Gain insights on how to read and leverage the MITRE ATT&CK Framework to improve your security strategy and map real-world adversary tactics, techniques, and procedures (TTPs) to Cybrary’s custom-designed MITRE ATT&CK matrix.",
+                "Gain insights on how to read and leverage Salesforce's architecture and best practices to improve your business strategy and map real-world use cases, features, and functionalities to FortifyLearning's custom-designed Salesforce learning paths.",
             image: 'https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/644bbe737bce787793bdb9f2_Frame%2096093-p-500.webp',
             icon: <VscTypeHierarchySuper className="text-3xl" />,
         },
         TakeAction: {
             title: "Take Action",
             description:
-                "Take practical steps to implement and leverage the MITRE ATT&CK Framework for your organization's cybersecurity strategy.",
+                "Gain insights on how to read and leverage Salesforce's architecture and best practices to improve your business strategy and map real-world use cases, features, and functionalities to FortifyLearning’s custom-designed Salesforce learning paths.",
             image: 'https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/643e705ccb8ecc0d48213c7a_home-learn-p-800.webp',
             icon: <HiOutlineRocketLaunch className="text-3xl" />,
         },
         DevelopAPlan: {
             title: "Develop a Plan",
             description:
-                "Create a strategic plan to address cybersecurity challenges by aligning with the MITRE ATT&CK Framework.",
+                "Gain insights on how to read and leverage Salesforce's architecture and best practices to improve your business strategy and map real-world use cases, features, and functionalities to FortifyLearning’s custom-designed Salesforce learning paths.",
             image: 'https://149359217.v2.pressablecdn.com/wp-content/uploads/2019/01/plan-1170x766.jpg',
             icon: <TbListCheck className="text-3xl" />,
         },
@@ -384,13 +384,14 @@ function MitreAttack() {
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
                     <h1 className="text-3xl md:text-4xl text-white font-bold md:w-2/4">
-                        Empower Your Team, Protect Your Organization
+                    Empower Your Team, Optimize Your Salesforce
                     </h1>
                     <p className="mt-4 text-gray-300  max-w-2xl">
-                        Empower your team to detect and mitigate cybersecurity threats with Cybrary. Request a demo today for access to hands-on practice labs, assessments, custom content, and more.
+                    Empower your team to excel in Salesforce with FortifyLearning. Request a demo today for access
+                    to hands-on practice labs, assessments, custom content, and more.
                     </p>
                     <button className="mt-8 bg-gradient-to-r from-red-500 to-fuchsia-500 py-3 px-8 text-white font-semibold rounded-2xl hover:shadow-lg transition-all">
-                        Cybrary for Teams
+                        FortifyLearning for Teams
                     </button>
                 </div>
             </div>
@@ -402,3 +403,9 @@ function MitreAttack() {
 }
 
 export default MitreAttack;
+
+
+
+
+
+

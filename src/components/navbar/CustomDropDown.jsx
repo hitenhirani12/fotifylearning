@@ -344,7 +344,7 @@ function CustomDropDown() {
                 </Dropdown.Item>
 
                 <Dropdown.Item className='dropdown-hover flex gap-2 p-2 rounded-lg hover:bg-gray-800 items-center'>
-                    <Link to='forums' className='flex items-center'>
+                    <Link to='forum' className='flex items-center'>
                         <MdOutlineForum className='text-2xl mr-2 text-white' />
                         <div>
                             <h1 className='text-lg font-semibold text-white'>Forums</h1>

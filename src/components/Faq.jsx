@@ -9,25 +9,25 @@ const Faq = () => {
 
   const faqs = [
     {
-      question: "Where is the MITRE ATT&CK Defender (MAD) Certification training?",
+      question: "Where is the Salesforce Certification training?",
       answer:
-        "MITRE ATT&CK Defender (MAD) is no longer available on Cybrary. Read the help center article to learn more.",
+        "Salesforce Certification training is no longer available on SkillAdvance. Read the help center article to learn more.",
     },
     {
-      question: "Do I need to know anything about cybersecurity to get started on Cybrary?",
-      answer: "No, you can start learning without prior knowledge of cybersecurity.",
+      question: " Do I need to know anything about Salesforce to get started on FortifyLearning?",
+      answer: "No. We’ve helped more than 3 million learners, with varying levels of education and experience, develop their Salesforce skills and reach their career goals.",
     },
     {
       question: "Do I need any special hardware or software?",
-      answer: "No special hardware or software is needed to get started.",
+      answer: "No. You won’t need any additional hardware or tools. All of our learning activities can be completed from the comfort of your own browser.",
     },
     {
       question: "Can I cancel anytime?",
-      answer: "Yes, you can cancel your subscription anytime.",
+      answer: "You may cancel your automatic renewal at any time. You will continue to have access to your subscription through the end of your current billing period. Please note that we do not provide refunds for any subscriptions purchased.",
     },
     {
       question: "What is your refund policy?",
-      answer: "Refunds are available within 30 days of purchase.",
+      answer: "We do not offer refunds on previous purchases. FortifyLearning is available in both monthly and annual subscription options. Should you have questions regarding our refund policy, please contact support@FortifyLearning.com.",
     },
   ];
 

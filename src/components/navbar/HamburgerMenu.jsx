@@ -23,7 +23,7 @@ const dropdownData = {
     ],
     individuals: [
         { icon: <RiShoppingBag4Line className='text-2xl mr-2' />, name: 'Career Paths', description: 'Launch or advance your career with curated collections of courses, labs, and more.', link: '/career-path' },
-        { icon: <MdOutlineForum className='text-2xl mr-2' />, name: 'Forums', description: 'Discuss all things cybersecurity for free among the vast Cybrary community.', link: '/?ref=wwwnav4indv' },
+        { icon: <MdOutlineForum className='text-2xl mr-2' />, name: 'Forums', description: 'Discuss all things cybersecurity for free among the vast Cybrary community.', link: '/forum' },
         { icon: <BsShieldCheck className='text-2xl mr-2' />, name: 'Free Access', description: 'Get a taste of the catalog with certification prep, introductory courses, and more.', link: '/free-content' },
         { icon: <GiProgression className='text-2xl mr-2' />, name: 'Insider Pro', description: 'Everything you need to learn, practice, and prove your cybersecurity skills.', link: '/cybrary-insider-pro' },
         { icon: <RiTeamFill className='text-2xl mr-2' />, name: 'For Teams', description: 'Build your team’s cybersecurity skills and achieve new certifications, all in one place.', link: '/business' },
@@ -137,7 +137,7 @@ const HamburgerMenu = ({ toggleMenu, isMenuOpen }) => {
                     <p className="text-[18px] cursor-pointer border-t py-2 border-gray-800 w-5/6">Pricing</p>
                 </div>
                 <div className="flex flex-col  space-y-4 p-8">
-                    <button className="border border-pink-500 text-white-500 rounded-xl font-bold px-7 py-3 rounded hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+                    <button className="border border-pink-500 text-white-500 font-bold px-7 py-3 rounded hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
                         Free Teams Demo
                     </button>
                     <button className="px-6 py-3 rounded-xl bg-black text-white hover:shadow-[4px_-4px_10px_rgba(128,0,128,0.5),-4px_4px_10px_rgba(255,105,180,0.5)] transition-shadow duration-300">

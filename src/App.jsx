@@ -14,6 +14,8 @@ import MitreAttack from "./pages/MitreAttack";
 import Alliances from "./pages/Alliances";
 import SocAnalyst from "./pages/careerpath/SocAnalyst";
 import Impact from "./pages/Impact";
+import Privacy from "./pages/Privacy";
+import Pricing from "./pages/pricing";
 
 function App() {
   return (
@@ -24,18 +26,17 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<SignupPopup />} />
-          {/* <Routes> */}
-            <Route path="/career-path" element={<CareerPath />}/>
-          {/* </Routes> */}
-
-          <Route path="career-path/network-engineer" element={<NetworkEngineer/>}/>
-          <Route path="threat-actor-campaign/weak-link-in-the-supply-chain" element={<SupplyChain/>}/>
-          <Route path="course/cve-series-couchdb-rce-cve-2022-24706" element={<CouchDBRCE/>}/>
-          <Route path="/mitre-attack" element={<MitreAttack/>}/>
-          <Route path="/alliances" element={<Alliances/>}/>
-          <Route path="/career-path/soc-analyst" element={<SocAnalyst/>}/>
-          <Route path="/practice-lab/log-analysis-basics" element={<SocAnalyst/>}/>
-          <Route path="/fortifylearning-impact-hub" element={<Impact/>}/>
+          <Route path="/career-path" element={<CareerPath />} />
+          <Route path="career-path/network-engineer" element={<NetworkEngineer />} />
+          <Route path="threat-actor-campaign/weak-link-in-the-supply-chain" element={<SupplyChain />} />
+          <Route path="course/cve-series-couchdb-rce-cve-2022-24706" element={<CouchDBRCE />} />
+          <Route path="/mitre-attack" element={<MitreAttack />} />
+          <Route path="/alliances" element={<Alliances />} />
+          <Route path="/career-path/soc-analyst" element={<SocAnalyst />} />
+          <Route path="/practice-lab/log-analysis-basics" element={<SocAnalyst />} />
+          <Route path="/fortifylearning-impact-hub" element={<Impact />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/pricing" element={<Pricing />} />
         </Route>
       </Routes>
       <Footer /> {/* Footer constant rahega har page ke liye */}
