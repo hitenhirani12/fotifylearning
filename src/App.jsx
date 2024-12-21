@@ -16,6 +16,7 @@ import SocAnalyst from "./pages/careerpath/SocAnalyst";
 import Impact from "./pages/Impact";
 import Privacy from "./pages/Privacy";
 import Pricing from "./pages/Pricing";
+// import Pricing from "./pages/Pricing";
 
 function App() {
   return (
