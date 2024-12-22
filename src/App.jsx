@@ -19,6 +19,10 @@ import Pricing from "./pages/Pricing";
 import Login2 from "./loginSystem/Login2";
 import Instructors from "./pages/Instructors";
 import Forum from "./pages/Forum"; // Assuming you have a Forum page component
+import GrafanaDirectory from "./pages/course/GrafanaDirectory";
+import AtlassianBitbucket from "./pages/course/AtlassianBitbucket ";
+import ApacheHttpd from "./pages/course/ApacheHttpd";
+import SkillsPath from "./pages/careerpath/SkillsPath";
 
 function App() {
   const location = useLocation();
@@ -35,9 +39,13 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<SignupPopup />} />
           <Route path="/career-path" element={<CareerPath />} />
+          <Route path="/skill-paths" element={<SkillsPath />} />
           <Route path="career-path/network-engineer" element={<NetworkEngineer />} />
           <Route path="threat-actor-campaign/weak-link-in-the-supply-chain" element={<SupplyChain />} />
           <Route path="course/cve-series-couchdb-rce-cve-2022-24706" element={<CouchDBRCE />} />
+          <Route path="course/cve-series-grafana-directory-traversal-cve-2021-43798" element={<GrafanaDirectory />} />
+          <Route path="course/cve-series-atlassian-bitbucket-command-injection-cve-2022-36804" element={<AtlassianBitbucket />} />
+          <Route path="course/cve-series-apache-httpd-cve-2021-42013" element={<ApacheHttpd />} />
           <Route path="/mitre-attack" element={<MitreAttack />} />
           <Route path="/alliances" element={<Alliances />} />
           <Route path="/career-path/soc-analyst" element={<SocAnalyst />} />
