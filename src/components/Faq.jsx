@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -11,7 +12,7 @@ const Faq = () => {
     {
       question: "Where is the Salesforce Certification training?",
       answer:
-        "Salesforce Certification training is no longer available on SkillAdvance. Read the help center article to learn more.",
+        "Salesforce Certification training is no longer available on FortifyLearning. Read the help center article to learn more.",
     },
     {
       question: " Do I need to know anything about Salesforce to get started on FortifyLearning?",
@@ -27,14 +28,22 @@ const Faq = () => {
     },
     {
       question: "What is your refund policy?",
-      answer: "We do not offer refunds on previous purchases. FortifyLearning is available in both monthly and annual subscription options. Should you have questions regarding our refund policy, please contact support@FortifyLearning.com.",
+      answer: (
+        <>
+          We do not offer refunds on previous purchases. FortifyLearning is available in both monthly and annual subscription options. Should you have questions regarding our refund policy, please contact{" "}
+          <NavLink to="/support" className="text-blue-500 hover:underline">
+            support@FortifyLearning.com
+          </NavLink>
+          .
+        </>
+      ),
     },
   ];
 
   return (
-    <div className="py-24 px-4 md:px-12 bg-gradient-to-b from-gray-900 to-transparent text-white flex flex-col md:flex-row justify-evenly">
-      <h1 className="text-4xl md:text-6xl md:mb-4 ml-4 md:ml-0 mb-12">FAQs</h1>
-      <div>
+    <div className="py-24 px-4 md:px-32 bg-gradient-to-b from-gray-900 to-transparent text-white flex flex-col md:flex-row justify-evenly ">
+      <h1 className="text-4xl md:text-6xl md:mb-4 ml-4 md:ml-0 mb-12 sm:w-1/3">FAQs</h1>
+      <div className="md:w-2/3">
         {faqs.map((faq, index) => (
           <div key={index} className="border-b border-gray-700">
             <div

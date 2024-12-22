@@ -13,7 +13,8 @@ function SignupComponent() {
                     Start Salesforce Training for <span className='text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 via-pink-700 to-pink-700'>Free</span> Today
                 </h2>
                 <p className='text-lg sm:text-xl text-gray-400 mt-4'>
-                    Join thousands of professionals and leading companies enhancing their Salesforce skills and capabilities with SkillAdvance. Begin your journey with our free introductory courses and experience the benefits of world-class Salesforce training.
+                Join over 3 million professionals and 96% of Fortune 1000 companies enhancing their
+                Salesforce skills and capabilities with FortifyLearning
                 </p>
             </div>
             <div className="bg-white text-black p-8 rounded-3xl shadow-lg w-full md:w-1/2 h-[auto] max-w-lg mx-auto">
@@ -58,8 +59,8 @@ function SignupComponent() {
                     </span>
                 </div>
                 <div className="w-full flex justify-between text-lg p-6 mt-8 border-t">
-                    <NavLink to="/signup" className="hover:underline">Sign in</NavLink>
-                    <NavLink to="/sso-options" className="hover:underline">View all SSO options</NavLink>
+                    <NavLink to="/login2" className="hover:underline">Sign in</NavLink>
+                    <span className="hover:underline " onClick={() => dispatch(togglePopup())}>View all SSO options</span>
                 </div>
             </div>
         </div>

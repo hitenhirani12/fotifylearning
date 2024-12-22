@@ -32,7 +32,7 @@ const Navbar = () => {
 
         {/* Right Side: Buttons */}
         <div className="hidden md:flex space-x-4">
-          <button className="border border-pink-500 text-white-500 rounded-xl font-bold px-7 py-3 rounded hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
+          <button className="border border-pink-500 text-white-500 rounded-xl font-bold px-7 py-3 hover:shadow-lg hover:shadow-pink-500/50 transition-shadow duration-300">
             Free Teams Demo
           </button>
           <button className="px-6 py-3 rounded-xl bg-black text-white hover:shadow-[4px_-4px_10px_rgba(128,0,128,0.5),-4px_4px_10px_rgba(255,105,180,0.5)] transition-shadow duration-300">

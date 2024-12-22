@@ -8,7 +8,7 @@ const testimonials = [
   {
     name: 'Jamal O.',
     title: 'Student',
-    text: 'I was unsure how to begin my Salesforce career path, but FortifyLearning made it clear. I enrolled in their comprehensive courses and quickly gained a solid understanding of Salesforce concepts and job roles. The hands-on training and career insights have given me a clear direction and renewed enthusiasm for pursuing my goals in Salesforce. FortifyLearning has truly set me on the right path.',
+    text: "I've been trying to navigate the world of Salesforce career paths, and getting introduced to FortifyLearning was a game-changer. I started with their Salesforce training sessions and gained  clear understanding of various Salesforce roles, their responsibilities, required skills, and the certifications needed. FortifyLearning has provided me with the direction and confidence to pursue my Salesforce career goals passionately.",
     image: 'https://hrf.org/wp-content/uploads/2024/09/Profile-Elle-Ota-V1.png' // Replace with actual image URL
   },
   {
@@ -73,7 +73,7 @@ const testimonials = [
   {
     name: 'Raul C.',
     title: 'Salesforce Specialist',
-    text: `Excellent new series of courses from SkillAdvance, each course covers a different aspect of
+    text: `Excellent new series of courses from FortifyLearning, each course covers a different aspect of
  Salesforce, demonstrates key functionalities, and their implementation.`,
     image: 'https://th.bing.com/th/id/OIP.yH-Ez-PUAcP68PN-54BztwHaKZ?rs=1&pid=ImgDetMain' // Replace with actual image URL
   },
@@ -156,7 +156,7 @@ const TestimonialsCarousel = () => {
       {/* Text and Buttons Section */}
       <div className="flex flex-col p-8 md:w-1/2">
         <h2 className="text-6xl mb-6 w-full text-center md:text-left">Words from our users</h2>
-        <p className='text-center md:text-left'>We're proud of our satisfied customers. Hear what our users have to say about their experiences with SkillAdvance's Salesforce and ServiceMax training</p>
+        <p className='text-center md:text-left'>We're proud of our satisfied customers. Hear what our users have to say about their experiences with FortifyLearning's Salesforce and ServiceMax training</p>
 
         {/* Navigation buttons */}
         <div className="flex space-x-4 mt-14 md:mt-8 justify-center md:justify-start">

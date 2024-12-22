@@ -305,7 +305,7 @@ const Privacy = () => {
 
 
                 {/* Right Container with Privacy Policy Text */}
-                <div className='w-3/3 md:w-2/3 px-20 mt-10 overflow-y-auto max-h-[100vh]'>
+                <div className='w-3/3 md:w-2/3 px-4 sm:px-20 mt-10 overflow-y-auto max-h-[100vh]'>
                     <p className='text-gray-300 font-semibold'>
                         This Cybrary, Inc. (“Cybrary”, “us” or “our”) Privacy Policy (“Privacy Policy”) explains our practices, defines our users’ (“you” or “your”) privacy options, and describes how your information is collected and used by Cybrary. This Privacy Policy, along with our
                         <NavLink to='/terms-of-service' className='text-blue-600 hover:underline'>
@@ -326,7 +326,7 @@ const Privacy = () => {
                         <li className='text-gray-300 ml-2 mt-2'>your choices about the information.</li>
                     </ul>
                     <p className='text-gray-300 mt-4'>By using the Cybrary Platform, you agree to the terms of this Privacy Policy and our Terms of Service.</p>
-                    <h1 id='COLLECTION_AND_USE' ref={(el) => (headingsRef.current[0] = el)} className='text-5xl mt-6'>
+                    <h1 id='COLLECTION_AND_USE' ref={(el) => (headingsRef.current[0] = el)} className='text-4xl sm:text-5xl mt-6'>
                         COLLECTION AND USE OF USER INFORMATION
                     </h1>
                     <p className='text-gray-300 mt-2'>This Privacy Policy primarily concerns Personal Information, which deals with individuals, rather than organizations or businesses. “Personal Information” uniquely identifies an individual or can identify an individual by combining it with other data. It includes email addresses, phone numbers and other information associated with the individual. The legal name and definition of personal information differs from jurisdiction to jurisdiction. Cybrary will not use or share Personal Information other than as described in this Privacy Policy.</p>
@@ -334,7 +334,7 @@ const Privacy = () => {
                     <p className='text-gray-300 mt-2'>We may obtain information about you from third-party sources, such as Google or Apple. This information may be utilized, analyzed, and/or compared with information that Cybrary has collected from you or that you have submitted to the Platform. If Cybrary obtains information from third-party sources, you agree that your sole legal remedy for any harm associated with that information is against the third-party that provided the information to us, and that you will not assert any cause of action, claim or demand against us other than requesting we delete any erroneous information.</p>
                     <p className='text-gray-300 mt-2'>For the avoidance of doubt, Cybrary shall be entitled to collect anonymous and/or aggregated data across its various products and services provided that no individual natural person can be identified from such data (“Aggregate Data”). The Aggregate Data will be used for various purposes, including without limitation to analyze behavior, trends, and website interaction, and to improve, and enhance our services and for other development, creation of new features, diagnostic and corrective purposes in connection with our services. Cybrary shall own all right, title and interest in and to the Aggregate Data and this is not considered personal data.</p>
 
-                    <h1 id='INFORMATION_COLLECTION' ref={(el) => (headingsRef.current[1] = el)} className='text-5xl mt-6'>
+                    <h1 id='INFORMATION_COLLECTION' ref={(el) => (headingsRef.current[1] = el)} className='text-4xl sm:text-5xl mt-6'>
                         INFORMATION COLLECTION TECHNOLOGY
                     </h1>
                     <p className='text-gray-300 mt-2'>
@@ -343,15 +343,15 @@ const Privacy = () => {
                     <p className='text-gray-300 mt-2'>A cookie is data stored on your device that tracks non-personal information about you. When using the Sites, we may assign your device one or more cookies that enable us to improve the quality of the Sites and to personalize your experience. Cookies allow us to automatically collect information about your activity on the Websites, such as the content you access while using the Sites, the links you click, and other activity you conduct while using the Sites. You may choose to modify your device setting to disable cookies or limit their use. If you choose to disable or limit cookies, or otherwise limit your device permissions to the Sites, you may experience diminished performance from the Sites and/or may be prevented from using some or all features of the Sites. Our cookies generally fall into one of four categories: Essential, Functional, Analytics and Target.</p>
                     <p className='text-gray-300 mt-2'>Our Platform may contain web beacons (also known as “clear gifs”) or similar technologies that gather non-personally identifiable information about your use of our Platform. Such technology may also be contained in e-mail messages or newsletters from us that allow us to determine whether messages have been accessed. The purpose of our use of this technology is so that we may analyze the effectiveness of our marketing efforts and the quality of our Platform.</p>
 
-                    <h1 id='PERMISSIONS' ref={(el) => (headingsRef.current[2] = el)} className='text-5xl mt-6'>
+                    <h1 id='PERMISSIONS' ref={(el) => (headingsRef.current[2] = el)} className='text-4xl sm:text-5xl mt-6'>
                         PERMISSIONS
                     </h1>
                     <p className='text-gray-300 mt-2'>The following section only applies if you use one of our mobile software applications (the “Software”). The Software requires certain permissions on your mobile device in order to work as intended. You can either allow or deny the Software access to the permissions. In some cases it is necessary for you to grant the Software permissions to take full advantage of features or functionality of the Software. If you disallow some or all permissions, the Software may not function properly. Some of the permissions needed may include access to your device’s: camera; calendar; location; phone; sensor; SMS; and storage. Additional permissions may be requested as new features are added in the future.</p>
-                    <h1 id='CHILDREN UNDER THE AGE OF 13' ref={(el) => (headingsRef.current[3] = el)} className='text-5xl mt-6'>
+                    <h1 id='CHILDREN UNDER THE AGE OF 13' ref={(el) => (headingsRef.current[3] = el)} className='text-4xl sm:text-5xl mt-6'>
                         CHILDREN UNDER THE AGE OF 13
                     </h1>
                     <p className='text-gray-300 mt-2'>In accordance with COPPA (Children’s Online Privacy Protection Act), we do not collect any information from anyone under 13 years of age. Our Site and Platform are not designed for children, and we do not knowingly collect information from any person under the age of 13. If you are the parent or legal guardian of someone under the age of 13 who may have provided Cybrary with information without your knowledge or consent, please contact us as provided below to have this information removed.</p>
-                    <h1 id='SHARING USER INFORMATION' ref={(el) => (headingsRef.current[4] = el)} className='text-5xl mt-6'>
+                    <h1 id='SHARING USER INFORMATION' ref={(el) => (headingsRef.current[4] = el)} className='text-4xl sm:text-5xl mt-6'>
                         SHARING USER INFORMATION
                     </h1>
                     <p className='text-gray-300 mt-2'>We do not share your personal data with any third-party advertisers or ad networks for their advertising purposes.</p>
@@ -379,17 +379,17 @@ const Privacy = () => {
                         <li className='text-gray-300 ml-2 mt-2'>To comply with our legal obligations, enforce this Privacy Policy, any other Cybrary agreements, or otherwise to protect the rights, property or safety of our users and business partners.</li>
                     </ul>
                     <p className='text-gray-300 mt-2'>In addition, we may share aggregate and sell, non-individual information, incapable of identifying a particular person, with third parties for any lawful purposes.</p>
-                    <h1 id='PROTECTION OF USER INFORMATION' ref={(el) => (headingsRef.current[5] = el)} className='text-5xl mt-6'>
+                    <h1 id='PROTECTION OF USER INFORMATION' ref={(el) => (headingsRef.current[5] = el)} className='text-4xl sm:text-5xl mt-6'>
                         PROTECTION OF USER INFORMATION
                     </h1>
                     <p className='text-gray-300 mt-2'>We maintain administrative, physical, and technical safeguards for all user information collected in our Platform. However, given the nature of communications and information technology, and that the use of the Internet has inherent risks, although we regularly monitor for possible vulnerabilities and attack, we cannot warrant or guarantee that information provided to us through the Platform or stored in our systems or otherwise will be absolutely free from unauthorized intrusion by others, nor can we warrant or guarantee that such data may not be accessed, disclosed, altered, or destroyed by breach of any of our physical, technical, or managerial safeguards. Therefore, although we take reasonable steps to secure your information, we cannot and do not promise or warrant that your information will always remain secure.</p>
-                    <h1 id='EXTERNAL LINKS AND THIRD PARTY PRIVACY PRACTICES' ref={(el) => (headingsRef.current[6] = el)} className='text-5xl mt-6'>
+                    <h1 id='EXTERNAL LINKS AND THIRD PARTY PRIVACY PRACTICES' ref={(el) => (headingsRef.current[6] = el)} className='text-4xl sm:text-5xl mt-6'>
                         EXTERNAL LINKS AND THIRD PARTY PRIVACY PRACTICES
                     </h1>
                     <p className='text-gray-300 mt-2'>Cybrary cannot guarantee or verify the contents of any externally linked website. You should therefore note you click on external links at your own risk and Cybrary cannot be held liable for any damages or implications caused by visiting any external links. This Privacy Policy does not cover any third party’s use or handling of your information once it is shared. Instead, the privacy policy of the third-party will govern. We encourage you to visit the websites of those third-parties and fully read and understand their privacy policies. Some of these entities will have different privacy terms than we do and their servers may be located outside the United States.</p>
                     <p className='text-gray-300 mt-2'>The Platform may link to other websites, including but not limited to health care provider pages, or through advertisements. We disclaim any and all responsibility for the privacy practices of third-parties that may have links to or from our Platform. We encourage you to review the privacy policies and privacy statements of every website that you visit that collects personally identifiable information.</p>
                     <p className='text-gray-300 mt-2'></p>
-                    <h1 id='CALIFORNIA PRIVACY RIGHTS' ref={(el) => (headingsRef.current[7] = el)} className='text-5xl mt-6'>
+                    <h1 id='CALIFORNIA PRIVACY RIGHTS' ref={(el) => (headingsRef.current[7] = el)} className='text-4xl sm:text-5xl mt-6'>
                         CALIFORNIA PRIVACY RIGHTS
                     </h1>
                     <p className='text-gray-300 mt-2'>We will not share any personal information about you with other companies if prohibited by applicable California law or to the extent your prior consent to share is required by applicable California law.</p>
@@ -428,7 +428,7 @@ const Privacy = () => {
 
                     <p className='text-gray-300 mt-2'>You are not required to pay any charge for exercising your rights. If you make a request, we have one month to respond to you.</p>
                     <p className='text-gray-300 mt-2'>Please contact us at privacy@cybrary.it if you wish to make a request.</p>
-                    <h1 id='CONTACT US' ref={(el) => (headingsRef.current[8] = el)} className='text-5xl mt-6'>
+                    <h1 id='CONTACT US' ref={(el) => (headingsRef.current[8] = el)} className='text-4xl sm:text-5xl mt-6'>
                         CONTACT US
                     </h1>
                     <p className='text-gray-300 mt-2'>For additional information pertaining to our Privacy Policy, please contact at privacy@cybrary.it or by writing us at:</p>
@@ -436,11 +436,11 @@ const Privacy = () => {
                     <p className='text-gray-300 mt-2'>Attn: Privacy</p>
                     <p className='text-gray-300 mt-2'>4600 River Road STE 400 Riverdale, MD 20737 USA</p>
                     <p className='text-gray-300 mt-2'>On any email or postal letter you send, please include “Privacy” in the subject line.</p>
-                    <h1 id='CHANGES TO THIS PRIVACY POLICY' ref={(el) => (headingsRef.current[9] = el)} className='text-5xl mt-6'>
+                    <h1 id='CHANGES TO THIS PRIVACY POLICY' ref={(el) => (headingsRef.current[9] = el)} className='text-4xl sm:text-5xl mt-6'>
                         CHANGES TO THIS PRIVACY POLICY
                     </h1>
                     <p className='text-gray-300 mt-2'>This Privacy Policy may be updated from time to time. We reserve the right to modify the Policy at any time without notice, so please review the Privacy Policy frequently. When changes are made to this Privacy Policy, we will revise the “last updated” date at the bottom of this Privacy Policy. Your continued use of our Sites or Platform after we have posted any policy changes indicates your agreement to the changes unless you notify us otherwise.</p>
-                    <h1 id='COOKIES' ref={(el) => (headingsRef.current[10] = el)} className='text-5xl mt-6'>
+                    <h1 id='COOKIES' ref={(el) => (headingsRef.current[10] = el)} className='text-4xl sm:text-5xl mt-6'>
                         COOKIES
                     </h1>
                     <p className='text-gray-300 mt-2'>When you visit or log in to our website, cookies and similar technologies may be used by our online data partners or vendors to associate these activities with other personal information they or others have about you, including by association with your email or home address.  We (or service providers on our behalf) may then send communications and marketing to these email or home addresses.  You may opt out of receiving this advertising by visiting.</p>
@@ -449,6 +449,7 @@ const Privacy = () => {
                     </NavLink>
                 </div>
             </div>
+
             <div className="w-full mt-24 flex justify-center">
                 <SignupComponent />
             </div>

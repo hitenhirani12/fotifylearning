@@ -41,7 +41,7 @@ function SignupPopup() {
                             <img className='w-[150px] md:w-[300px] h-auto mb-4 md:mb-8' src={cybraryLogo} alt="Cybrary Logo" />
                             <h2 className="text-2xl md:text-4xl text-white mb-4 md:mb-8">Register</h2>
                             <p className="text-gray-400 mb-4 md:mb-6 text-center md:text-left text-lg">
-                                Join over <span className="font-semibold text-white">3 million</span> cybersecurity professionals advancing their career.
+                                Join over <span className="font-semibold text-white">3 million</span>  Salesforce Professionals Advancing Their Careers.
                             </p>
 
                             {/* Social Media Signup */}
@@ -122,7 +122,7 @@ function SignupPopup() {
                                 <div className="mb-4 flex items-center">
                                     <input type="checkbox" id="updates" className="mr-2" />
                                     <label htmlFor="updates" className="text-sm text-gray-400">
-                                        I want to receive new courses, feature updates, news, and discounts from Cybrary
+                                        Iwant to receive new courses, feature updates, news, and discounts from FortifLearning.
                                     </label>
                                 </div>
 

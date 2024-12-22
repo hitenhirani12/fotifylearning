@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
@@ -16,12 +16,19 @@ import SocAnalyst from "./pages/careerpath/SocAnalyst";
 import Impact from "./pages/Impact";
 import Privacy from "./pages/Privacy";
 import Pricing from "./pages/Pricing";
-// import Pricing from "./pages/Pricing";
+import Login2 from "./loginSystem/Login2";
+import Instructors from "./pages/Instructors";
+import Forum from "./pages/Forum"; // Assuming you have a Forum page component
 
 function App() {
+  const location = useLocation();
+
+  // Pages where Navbar and Footer should not appear
+  const hideNavbarAndFooter = ["/login2", "/forum"].includes(location.pathname);
+
   return (
-    <Router>
-      <Navbar /> {/* Navbar constant rahega har page ke liye */}
+    <>
+      {!hideNavbarAndFooter && <Navbar />}
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -38,11 +45,20 @@ function App() {
           <Route path="/fortifylearning-impact-hub" element={<Impact />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/instructors" element={<Instructors />} />
         </Route>
+        <Route path="/login2" element={<Login2 />} />
+        <Route path="/forum" element={<Forum />} />
       </Routes>
-      <Footer /> {/* Footer constant rahega har page ke liye */}
-    </Router>
+      {!hideNavbarAndFooter && <Footer />}
+    </>
   );
 }
 
-export default App;
+export default function AppWithRouter() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}

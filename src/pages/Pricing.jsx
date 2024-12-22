@@ -1,175 +1,284 @@
-import React from 'react'
-import { MdInfoOutline, MdOutlineForum } from "react-icons/md";
-import { RiArrowRightSLine } from "react-icons/ri";
+import React, { useState } from "react";
+import {
+    RiArrowRightSLine,
+    RiGraduationCapFill,
+    //   RiUserCommunityFill,
+    RiTeamLine,
+    RiCommunityLine,
+} from "react-icons/ri";
+import { RxDiscordLogo } from "react-icons/rx";
+import { LiaChartBarSolid } from "react-icons/lia";
+import { PiBuildingsBold, PiCertificateLight } from "react-icons/pi";
+import { GiSkills } from "react-icons/gi";
+import { NavLink } from "react-router-dom";
+import PricingPlans from './pricing/PricingPlans';
+import SignupComponent from "../components/home/SignupComponent";
+// import {  } from "react-icons/ri";
+
 
 function Pricing() {
+    const plansData = {
+        Overview: [
+            { feature: "Course & Labs Library", free: "Limited Access", pro: "✔", teams: "✔"}, 
+            { feature: "Career Paths", free: "Limited Access", pro: "✔", teams: "✔"}, 
+            { feature: "Skill Paths", free: "Limited Access", pro: "✔", teams: "✔"}, 
+            { feature: "Certification Prep Paths", free: "Limited Access", pro: "✔", teams: "✔"}, 
+            { feature: "Salesforce Readiness", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Community", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Baseline & Benchmark", free: "✘", pro: " ✘", teams: "✔"}, 
+            { feature: "Team Insights & Analytics", free: "✘", pro: "✘", teams: "✔"}, 
+        ],
+        Core: [
+            { feature: "Video Library", free: "✔", pro: "✔", teams: "✔"}, 
+            { feature: "Assessments", free: "✔", pro: "✔", teams: "✔"}, 
+            { feature: "Badges, XP & Levels", free: "✔", pro: "✔", teams: "✔"}, 
+            { feature: "Hands-on Labs", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Practice Tests", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Digtial Credentials", free: "✘", pro: "coming soon", teams: "coming soon"}, 
+        ],
+        "Career Paths": [
+            { feature: "Introduction to IT & Cybersecurity", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "SOC Analyst", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Jr Penetration Tester", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Security Engineer", free: "✘", pro: "coming soon", teams: "coming soon"}, 
+            { feature: "Custom Career Paths", free: "✘", pro: "✘", teams: "✔"}, 
+        ],
+        "Salesforce Skills": [
+            { feature: "Introduction to Salesforce", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Salesforce Administrator", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Salesforce Developer", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Salesforce Consultant", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Custom Salesforce Career Paths", free: "coming soon", pro: "coming soon", teams: "coming soon"}, 
+        ],
+        "Certification Prep": [
+            { feature: "40+ Certification Video Courses", free: "✔", pro: "✔", teams: "✔"}, 
+            { feature: "CEUs/CPEs (Continuing Education)", free: "✔", pro: "✔", teams: "✔"}, 
+            { feature: "Test Readiness Programs (Labs & Practice Tests)", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Certification Insights", free: "✘", pro: "✘", teams: "✔"}, 
+        ],
+        "Cyber Threat-Readiness": [
+            { feature: "CVE Emulation", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Threat Actor Campaigns", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Salesforce Training & Certification", free: "✘", pro: "✔", teams: "✔"}, 
+            { feature: "Threat Readiness Insights", free: "✘", pro: "✘", teams: "✔"}, 
+        ],
+        Community: [
+            { feature: "Forums", free: "✔", pro: "✔", teams: "✔"}, 
+            { feature: "Mentor & Career Coaching", free: "✘", pro: "✔", teams: "✔"}, 
+        ],
+        Teams: [
+            { feature: "Onboard New Team Members", free: "✘", pro: "✘", teams: "✔"}, 
+            { feature: "Create & Customize Career Paths", free: "✘", pro: "✘", teams: "✔"}, 
+            { feature: "50+ Out-of-the-Box Training Paths", free: "✘", pro: "✘", teams: "✔"}, 
+            { feature: "Baseline & Benchmark Skill Capabilities  (NEW)", free: "✘", pro: "✘", teams: "✔"}, 
+            { feature: "Align to Industry Frameworks (ATT&CK, NICE CWF, DoD 8140, MITRE)", free: "✘", pro: "✘", teams: "✔"}, 
+            { feature: "Scheduled Reporting", free: "✘", pro: "✘", teams: "✔"}, 
+            { feature: "Data Export", free: "✘", pro: "✘", teams: "✔"}, 
+            { feature: "Usage & Management Analytics", free: "✘", pro: "✘", teams: "✔"}, 
+            { feature: "User Roles & Permissions", free: "✘", pro: "✘", teams: "✔"}, 
+            { feature: "Group Management", free: "✘", pro: "✘", teams: "✔"}, 
+            { feature: "Cybersecurity Training Advisor", free: "✘", pro: "✘", teams: "✔ 10+ Team members"}, 
+            { feature: "Single Sign-On (SSO)", free: "✘", pro: "✘", teams: "✔ 10+ Team members"}, 
+            { feature: "LMS Integration", free: "✘", pro: "✘", teams: "✔ 10+ Team members"}, 
+            { feature: "Data API", free: "✘", pro: "✘", teams: "✔ 10+ Team members"}, 
+        ],
+    };
+
+    const sectionIcons = {
+        Overview: <RiGraduationCapFill className="text-2xl z-10" />,
+        Core: <RxDiscordLogo className="text-2xl z-10" />,
+        "Career Paths": <LiaChartBarSolid className="text-2xl z-10" />,
+        "Cyber Skills": <GiSkills className="text-2xl z-10" />,
+        "Certification Prep": <PiCertificateLight className="text-2xl z-10" />,
+        "Cyber Threat-Readiness": <PiBuildingsBold className="text-2xl z-10" />,
+        Community: <RiCommunityLine className="text-2xl z-10" />,
+        Teams: <RiTeamLine className="text-2xl z-10" />,
+    };
+
+
+    const [openSections, setOpenSections] = useState(["Overview"]);
+
+    const toggleSection = (section) => {
+        setOpenSections((prev) =>
+            prev.includes(section)
+                ? prev.filter((s) => s !== section) // Close section
+                : [...prev, section] // Open section
+        );
+    };
+
+
     return (
         <div className='mt-40'>
-            <div className='w-5/6 mx-auto'>
-                <h1 className='text-6xl text-center'><span className='text-pink-800'>FortifyLearning</span> pricing plans</h1>
-                <p className='text-gray-400 font-semibold mt-6 mx-auto text-center w-3/5'>Follow structured Career Paths, focus on specific skills, prepare to take certification exams, and stay ahead of ever-evolving threats, all in one place. Trusted by four million global cyber practitioners and 1000+ organizations. Join the community today.</p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-8 text-white">
-
-                    <div class="h-[664px] flex flex-col justify-between bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 p-[1px] rounded-lg">
-                        <h1 className='flex items-center justify-center '>FOR INDIVIDUALS</h1>
-                        <div class="bg-gray-900 rounded-br-lg rounded-bl-lg p-8 h-6/6 ">
-                            <h2 class="text-3xl font-semibold text-white">Cybrary Free Access</h2>
-                            <p class="text-sm mb-10 mt-2">Built for individuals looking to explore Cybrary and learn more about cybersecurity.</p>
-                            <button class="px-6 py-3 w-full text-lg bg-transparent border border-orange-400 rounded-lg">
-                                Start for Free
-                            </button>
-                            <p className="text-4xl  mt-6">Free</p>
-                            <p className='mt-10 mb-14'>Get limited access to the Cybrary catalog, including:</p>
-                            <ul class="mt-4 space-y-4 text-sm">
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Limited access to Career Paths and Skill Paths</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Limited access to Cert Prep Paths</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Community Forums</span>
-                                </li>
-                            </ul>
-                        </div>
+            <PricingPlans />
+            <div className="mt-24 w-full bg-cover bg-center bg-opacity-50" style={{ backgroundImage: "url('https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae205da78ed7f6ff3adec2_8.png')" }}>
+                <div className="w-4/5 mx-auto py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20">
+                    <div>
+                        <h2 className='text-5xl'>
+                            What are the differences between an <span className='text-pink-500'>Insider Pro &</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-fuchsia-600">Teams Plan?</span>
+                        </h2>
                     </div>
-
-
-                    <div class="h-[912px] flex flex-col justify-between bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 p-[1px] rounded-lg">
-                        <h1 className='flex items-center justify-center'>FOR INDIVIDUALS</h1>
-                        <div class="bg-gradient-to-b from-gray-900  via-pink-900 to-gray-900 rounded-br-lg rounded-bl-lg p-8 h-6/6 ">
-                            <h2 class="text-3xl font-semibold text-white">Cybrary Insider Pro</h2>
-                            <p class="text-sm mb-10 mt-4">Built for individuals looking for their next career opportunity in cybersecurity.</p>
-                            <button class="px-6 py-3 w-full text-lg bg-transparent border border-pink-600 rounded-lg">
-                                Buy now
+                    <div>
+                        <h2 className='text-5xl flex flex-wrap'>
+                            FortifyLearning<span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">Insider Pro</span>
+                        </h2>
+                        <p className='text-gray-100 font-semibold text-xl mt-4'>For Individuals</p>
+                        <p className='text-lg mt-4 text-gray-400'>
+                            <span className='text-gray-100 font-semibold'>FortifyLearning Insider Pro </span>
+                            (CIP) contains the tools and resources individuals need to effectively prepare for cybersecurity jobs.
+                            CIPs have access to industry framework aligned Career Paths, Skill Paths, and Certification Prep, as well as Credly-validated digital badges, threat-informed content, and much more!
+                        </p>
+                        <NavLink to='/insider-pro'>
+                            <button className="px-6 py-3 w-full flex items-center justify-center mt-10 text-lg bg-transparent border rounded-2xl">
+                                Explore more <RiArrowRightSLine />
                             </button>
-                            <p class="text-4xl mt-6">$49/mo</p>
-                            <p class="text-s text-gray-400">billed annually
-                                $59/mo billed monthly</p>
-                            <p className='mt-4 mb-10'>Get full access to the complete Cybrary catalog, including:</p>
-                            <ul class="mt-4 space-y-4 text-sm">
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Everything included in the Free plan, plus:</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Full access to all Career and Skill Paths, including courses, labs, challenges, and assessments</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Full access to all Cert Prep Paths, including video courses, labs, and practice exams</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Stay Ahead content including Threat Actor Campaigns, CVE Series, Challenges, and OWASP Top 10</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Private Discord Community with Mentor support
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
+                        </NavLink>
                     </div>
-
-
-                    <div class="flex flex-col justify-between bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 p-[1px] rounded-lg">
-                        <h1 className='flex items-center justify-center '>MOST POPULAR FOR TEAMS</h1>
-                        <div class="bg-gray-900 rounded-br-lg rounded-bl-lg p-8 h-6/6 ">
-                            <h2 class="text-3xl font-semibold text-white">Cybrary For Teams</h2>
-
-                            <p class="text-sm mb-10 mt-4">Built for organizations looking to reduce their cyber risk through hands-on training for their cybersecurity teams.</p>
-                            <button class="px-6 py-3 w-full text-lg bg-transparent border border-pink-600 rounded-lg">
-                                Buy now
+                    <div>
+                        <h2 className='text-5xl flex flex-wrap'>
+                            FortifyLearning<span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">For Teams</span>
+                        </h2>
+                        <p className='text-lg mt-4 text-gray-400'>
+                            <span className='text-gray-100 font-semibold'>FortifyLearning For Teams </span>
+                            includes all that CIP offers, plus the tools and functionality to build, manage, and scale a cybersecurity training program across an organization.
+                        </p>
+                        <ul className="mt-4 space-y-2 text-gray-100">
+                            <li className='flex items-center font-semibold'>
+                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
+                                Utilize and customize repeatable onboarding programs
+                            </li>
+                            <li className='flex items-center font-semibold'>
+                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
+                                Baseline and benchmark your team's skills
+                            </li>
+                            <li className='flex items-center font-semibold'>
+                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
+                                Easily remediate skill gaps
+                            </li>
+                            <li className='flex items-center font-semibold'>
+                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
+                                Prepare your team for certifications
+                            </li>
+                            <li className='flex items-center font-semibold'>
+                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
+                                Assign tailored coursework aligned to key industry frameworks
+                            </li>
+                            <li className='flex items-center font-semibold'>
+                                <img className='h-5 w-5 mr-2' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/668bdbd0cefcee5c0bdce079_Group%20313.svg" alt="" />
+                                Stay ahead of existing threats and better protect your organization
+                            </li>
+                        </ul>
+                        <NavLink to='/for-teams'>
+                            <button className="px-6 py-3 w-full flex items-center justify-center mt-10 text-lg bg-transparent border rounded-2xl">
+                                Explore more <RiArrowRightSLine />
                             </button>
-                            <p class="text-4xl font-bold mt-6">$79/mo</p>
-                            <p class="text-xs text-gray-400">Billed annually</p>
-                            <p className='mt-4 mb-10'>Get full access to the complete Cybrary catalog, as well as Teams-exclusive features, including:</p>
-                            <ul class="mt-4 space-y-4 text-sm">
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Identify and remediate skill gaps with Cybrary's Baselining tool</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Monitor and track team performance with the Teams Dashboard</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Cyber Risk Impact widget shows the value of the learning your Team does with Cybrary and how it lowers your business risk for a cybersecurity breach</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Create Groups within the Team for oversight and management</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Create up to 5 custom Paths for your Team to align with company roles and objectives</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Assign Goals and track progress for individuals or groups</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">User and content analytics provide all the details you need about what your Team is getting from learning with Cybrary</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="h-[962px] flex flex-col justify-between bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 p-[1px] rounded-lg">
-                        <h1 className='flex items-center justify-center h-10'>Customized for your Team</h1>
-                        <div class="bg-gray-900 rounded-br-lg rounded-bl-lg p-6 h-6/6 ">
-                            <h2 class="text-3xl font-semibold text-white">Cybrary For Enterprise</h2>
-                            <p class="text-sm mb-10 mt-4">Tailored solutions for teams whose needs would benefit from our Success Team’s expertise. Your Team, Your Way.</p>
-                            <button class="flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-lg">
-                                Schedule a Demo <RiArrowRightSLine/>
-                            </button>
-                            <p class="mt-10"><MdOutlineForum className='text-5xl'/> Contact Sales for Pricing</p>
-                            <p className='mt-4 mb-10'>Get full access to the complete Cybrary catalog, all Teams features, and Enterprise-only options including:</p>
-                            <ul class="mt-4 space-y-2 text-sm">
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Everything in Cybrary for Teams plan, plus:</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Dedicated Customer Success Manager who gets your team onboarded and provides personalized support</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Option to set up SSO for easy sign-in</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Option to integrate with your existing LMS
-                                    </span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Data API</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Unlimited custom paths</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">Quarterly Business Review with senior leadership to ensure your Team's success</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <img className='h-5 w-5 ' src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/65ae06f460dc2c161f770080_Group%20116.svg" alt="" />
-                                    <span class="ml-2">First look at upcoming product features</span>
-                                </li>
-                            </ul>
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
+            </div>
 
+            <div className="flex flex-col lg:flex-row w-4/5 items-center mx-auto mt-20 gap-10 lg:gap-20">
+                <div className="w-full lg:w-2/5 text-center lg:text-left">
+                    <h2 className="text-4xl sm:text-5xl flex flex-wrap">
+                        FortifyLearning
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">
+                            Risk Impact
+                        </span>
+                    </h2>
+                    <p className="text-gray-400 mt-4">
+                        How does your team's activity on Cybrary reduce your company's cyber risk?
+                        To decrease your risk impact by 2%, your team needs to average just 4 hours of learning per month.
+                    </p>
+                </div>
+                <div className="w-full lg:w-3/5">
+                    <img
+                        src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/67325bea05c0f86df8ac7d33_Frame%2096093-min-p-1080.png"
+                        alt=""
+                        className="w-full h-auto"
+                    />
+                </div>
+            </div>
+
+            <div className="mt-20 mx-auto bg-gradient-to-b from-gray-900 to-black text-white p">
+                <h1 className="text-4xl sm:text-5xl text-center mb-6 mt-10">Compare our plans</h1>
+                <div className="w-11/12 w-5/5 sm:w-4/5 mx-auto bg-gray-900 p-2 sm:p-10 rounded-3xl overflow-y-auto">
+                    <div className="overflow-x-auto">
+                        <table className="w-full mt-3 border-b-2 mb-4 border-gray-700">
+                            <thead>
+                                <tr className="">
+                                    <th className="border-gray-700 p-2 text-left">Plan Features</th>
+                                    <th className="border-gray-700 p-2">
+                                        <h2 className="flex flex-col text-center">
+                                            FortifyLearning
+                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">
+                                                Free Edition
+                                            </span>
+                                        </h2>
+                                    </th>
+                                    <th className="border-gray-700 p-2">
+                                        <h2 className="flex flex-col text-center">
+                                            FortifyLearning
+                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">
+                                                Insider Pro
+                                            </span>
+                                        </h2>
+                                    </th>
+                                    <th className="border-gray-700 p-2">
+                                        <h2 className="flex flex-col text-center">
+                                            FortifyLearning
+                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-fuchsia-600">
+                                                For Teams
+                                            </span>
+                                        </h2>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    {Object.entries(plansData).map(([section, plans]) => (
+                        <div key={section} className="mb-4">
+                            <button
+                                onClick={() => toggleSection(section)}
+                                className="w-full py-4 rounded-lg flex gap-4 sm:gap-6 items-center"
+                            >
+                                <span>
+                                    <RiArrowRightSLine className="text-pink-500 text-2xl sm:text-3xl" />
+                                </span>
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 sm:w-10 sm:h-10 relative flex justify-center items-center rounded-3xl">
+                                        <img
+                                            className="absolute top-0 left-0 z-2"
+                                            src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/64369e04d29c9d9b21942d66_home-icon-background.webp"
+                                            alt="Star"
+                                        />
+                                        {sectionIcons[section]}
+                                    </div>
+                                    <span className="font-semibold text-sm sm:text-base">{section}</span>
+                                </div>
+                            </button>
+                            {openSections.includes(section) && (
+                                <div className="overflow-x-auto">
+                                    <table className="w-full mt-3  border-collapse">
+                                        <tbody className="text-center">
+                                            {plans.map((plan, index) => (
+                                                <tr key={index}>
+                                                    <td className="px-4 sm:px-8 py-2 text-left sm:w-1/4 text-sm sm:text-base">{plan.feature}</td>
+                                                    <td className="px-4 sm:px-8 py-2 text-sm sm:w-1/4 sm:text-base">{plan.free}</td>
+                                                    <td className="px-4 sm:px-8 py-2 text-sm sm:w-1/4 sm:text-base">{plan.pro}</td>
+                                                    <td className="px-4 sm:px-8 py-2 text-sm sm:w-1/4 sm:text-base">{plan.teams}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className="w-full mt-24 flex justify-center">
+                <SignupComponent />
             </div>
         </div>
     )

@@ -14,98 +14,90 @@ function MitreAttack() {
     const salesforceCourses = [
         {
             img: 'https://isodoc.co.uk/wp-content/uploads/2023/06/training-procedure.jpg',
-            title: 'Salesforce Fundamentals',
-            overview: 'Get started with the basics of Salesforce, including navigation, data management, and reporting.',
+            title: 'Salesforce Administrator Certification',
+            overview: ' In this course, you will learn the basics of managing and configuring Salesforce. You will review key features and functionalities, such as user management, security settings, and data management. This course will prepare you for the Salesforce Administrator certification exam',
             duration: '4 hours',
             format: 'On-demand video',
             link: '/course/cyber-network-security'
         },
         {
             img: 'https://cdn.shopaccino.com/igmguru/products/salesforce-training-igmguru_1400382585_l.jpg?v=500',
-            title: 'Advanced Salesforce Administration',
-            overview: 'Dive deeper into advanced admin topics, including custom objects, complex workflows, and advanced data management.',
+            title: 'Salesforce Advanced Administrator Certification',
+            overview: 'Dive deeper into Salesforce administration with advanced topics such as automation, process builder, and custom reporting. This course is designed for those who have mastered the basics and are looking to enhance their administrative skills and earn the Advanced Administrator certification.',
             duration: '6 hours',
             format: 'Interactive lab sessions',
             link: '/practice-lab/secure-network-access'
         },
         {
             img: 'https://dianapps.com/blog/wp-content/uploads/2022/12/Reasons-Why-Every-Company-Needs-a-Dedicated-Salesforce-Developer.png',
-            title: 'Salesforce Developer Essentials',
-            overview: 'Learn the core development skills needed to build and customize Salesforce applications using Apex and Visualforce.',
+            title: 'Salesforce Platform App Builder Certification',
+            overview: 'This course covers the essentials of developing custom applications on the Salesforce platform. Learn about data modeling, user interface design, and business logic. It’s perfect for those looking to pass the Salesforce Platform App Builder certification exam.',
             duration: '8 hours',
             format: 'Hands-on projects and coding exercises',
             link: '/practice-lab/configure-a-virtual-network-service-endpoint'
         },
         {
             img: 'https://www.apexhours.com/wp-content/uploads/2021/06/Factors-Influencing-Salesforce-Org-Strategy.png',
-            title: 'Salesforce Integration Strategies',
-            overview: 'Understand various integration methods and tools for connecting Salesforce with other systems, including APIs and middleware.',
+            title: 'Salesforce Sales Cloud Consultant Certification',
+            overview: 'Specialize in Salesforce Sales Cloud with this course that focuses on sales processes, opportunity management, and forecasting. This training prepares you for the Sales Cloud onsultant certification exam, helping you optimize sales performance in your organization',
             duration: '5 hours',
             format: 'Case studies and practical exercises',
             link: '/practice-lab/configure-linux-firewall-acl-rules'
         },
         {
             img: 'https://360degreecloud.com/wp-content/uploads/2024/03/Salesforce-Data-Migration-Why-Its-Time-to-Make-the-Move-1024x535.jpg',
-            title: 'Data Migration with Salesforce',
-            overview: 'Master data import, export, and transformation techniques to ensure smooth data migration into Salesforce.',
+            title: '*Salesforce Service Cloud Consultant Certification',
+            overview: ' Master Salesforce Service Cloud to improve customer service and support operations. Topics include case management, service console, and knowledge management. This course is aimed at preparing you for the Service Cloud Consultant certification exam.',
             duration: '4 hours',
             format: 'Live demonstrations and guided practice',
             link: '/practice-lab/configure-ip-routing-with-linux-on-azure'
         },
         {
             img: 'https://ceptes.com/wp-content/uploads/2020/02/Top-10-lightning-features-1-1.jpg',
-            title: 'Salesforce Lightning Experience',
-            overview: 'Transition smoothly from Classic to Lightning Experience with a comprehensive guide on new features and functionalities.',
+            title: 'Salesforce Marketing Cloud Certification',
+            overview: 'Explore Salesforce Marketing Cloud features like email marketing, automation, and data management. This course is ideal for those aiming to become certified Marketing Cloud professionals and enhance their marketing capabilities.',
             duration: '3 hours',
             format: 'On-demand video tutorials',
             link: '/practice-lab/configure-network-connectivity-for-linux-on-azure'
         },
         {
             img: 'https://www.mastersoftwaresolutions.com/wp-content/uploads/2024/02/mss-founded-by-ravi-garg-website-insights-key-components-and-features-of-salesforce-service-cloud.webp',
-            title: 'Salesforce Service Cloud Mastery',
-            overview: 'Enhance your skills in managing customer service operations using Salesforce Service Cloud, focusing on case management and service automation.',
+            title: '*Salesforce Field Service Certification',
+            overview: 'Learn how to implement and manage Salesforce Field Service to optimize field operations. This course covers scheduling, mobile workforce, and service resources, preparing you for the Salesforce Field Service certification exam.',
             duration: '6 hours',
             format: 'Interactive scenarios and quizzes',
             link: '/practice-lab/deploy-ubuntu-linux-virtual-machines-in-the-microsoft-azure'
         },
         {
             img: 'https://www.ksolves.com/wp-content/uploads/Blog-3.jpg',
-            title: 'Salesforce Marketing Cloud Insights',
-            overview: 'Explore advanced marketing automation and analytics capabilities within Salesforce Marketing Cloud.',
+            title: 'Salesforce Integration Architecture Designer Certification',
+            overview: ' Gain expertise in integrating Salesforce with other systems. This course covers integration patterns, APIs, and security considerations, helping you prepare for the Integration Architecture Designer certification exam',
             duration: '5 hours',
             format: 'Case studies and practical exercises',
             link: '/practice-lab/can-you-use-pki-to-secure-a-network-environment-expert'
         },
         {
             img: 'https://www.techforceservices.com/wp-content/uploads/2021/03/top-5-salesforce-security-best-practices.webp',
-            title: 'Salesforce Security Best Practices',
-            overview: 'Learn best practices for securing your Salesforce instance, including user access management and data protection.',
+            title: 'Salesforce Data Architect Certification',
+            overview: ' Focus on data modeling, data management, and data quality with Salesforce. This course prepares you for the Salesforce Data Architect certification exam by covering advanced data handling and architecture concepts.',
             duration: '4 hours',
             format: 'On-demand video and security assessments',
             link: '/practice-lab/configure-a-network-security-group-in-a-virtual-network'
         },
         {
             img: 'https://dwlrs858nh2or.cloudfront.net/wp-content/uploads/2024/02/14195041/Salesforce-CPQ-Basics.webp',
-            title: 'Salesforce CPQ Fundamentals',
-            overview: 'Understand the essentials of Salesforce CPQ (Configure, Price, Quote) to streamline your sales process and quoting accuracy.',
+            title: 'Salesforce Development & Coding',
+            overview: 'This course provides an in-depth look at Salesforce development using Apex, Visualforce, and Lightning components. Ideal for aspiring Salesforce developers who want to build custom applications and enhance their coding skills.',
             duration: '5 hours',
             format: 'Interactive labs and real-world scenarios',
             link: '/practice-lab/identify-non-secure-network-traffic'
         },
         {
             img: 'https://sunshineskill.com/wp-content/uploads/2024/07/analytics-cloud.jpg',
-            title: 'Salesforce Analytics Cloud Training',
-            overview: 'Get hands-on experience with Salesforce Analytics Cloud.',
+            title: 'Salesforce Lightning Experience',
+            overview: 'Understand the Lightning Experience interface and how to migrate from Classic to Lightning This course covers customization, new features, and best practices to fully leverage Salesforce Lightning.',
             duration: '5 hours',
             format: 'Practical exercises and case studies',
-            link: '/practice-lab/identify-non-secure-network-traffic'
-        },
-        {
-            img: 'https://www.techforceservices.com/wp-content/uploads/2024/05/Salesforce-Community-Cloud-Crafting-Dynamic-Online-Communities.webp',
-            title: 'Salesforce Community Cloud Essentials',
-            overview: 'Learn to build and manage Salesforce Communities to enhance collaboration and engagement with external users.',
-            duration: '5 hours',
-            format: 'On-demand video and project-based learning',
             link: '/practice-lab/identify-non-secure-network-traffic'
         },
     ];
@@ -137,7 +129,7 @@ function MitreAttack() {
         PursueResearch: {
             title: "Pursue Research",
             description:
-                "Explore detailed research and analysis to strengthen your understanding and application of the MITRE ATT&CK Framework.",
+                " Gain insights on how to read and leverage Salesforce's architecture and best practices to improve your business strategy and map real-world use cases, features, and functionalities to FortifyLearning’s custom-designed Salesforce learning paths.",
             image: 'https://images.deccanherald.com/deccanherald%2Fimport%2Fsites%2Fdh%2Ffiles%2Farticleimages%2F2020%2F09%2F29%2Fistock-11271050131-894483-1601348572.jpg?auto=format%2Ccompress&fmt=webp&fit=max&format=webp&q=70&w=400&dpr=2',
             icon: <TbListSearch className="text-3xl" />,
         },
@@ -174,10 +166,11 @@ function MitreAttack() {
             <header className="mt-28 flex flex-col lg:flex-row px-6 md:px-48 items-center">
                 <div className="mt-8 xl:mt-40 flex flex-col items-center md:items-start">
                     <h1 className="text-4xl md:text-6xl text-center md:text-left">
-                        MITRE ATT&CK®
+                    Salesforce Training & Certification
                     </h1>
                     <p className="mt-4 text-gray-300 max-w-full md:max-w-2xl text-center md:text-left">
-                        Whether you are looking to start a new career, earn a certification, or protect your organization against an evolving threat landscape, Cybrary has you covered.
+                    Whether you are looking to start a new career, earn a certification, or optimize your
+                    organization's Salesforce environment, FortifyLearning has you covered
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row justify-center sm:justify-start items-center">
                         <NavLink to="/demo-request">
@@ -268,10 +261,11 @@ function MitreAttack() {
             <div className="mt-24 w-full text-white py-24 px-4 md:px-32 xl:px-68 flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 to-transparent">
                 {/* Heading Section */}
                 <h2 className="text-3xl md:text-5xl text-center mb-8">
-                    Threat-Informed Security Training
+                Salesforce-Informed Training
                 </h2>
                 <p className="text-center w-full md:w-3/5 mb-12 text-gray-400">
-                    Detect and mitigate threats with tools, techniques, and attack scenarios aligned to real-world kill chains.
+                Optimize and leverage Salesforce with tools, techniques, and scenarios aligned to real-world
+                business processes.
                 </p>
 
                 {/* Cards Section */}
@@ -282,7 +276,7 @@ function MitreAttack() {
                                 <img src={course.img} alt="" className="h-[200px] w-full object-cover rounded-t-lg" />
                                 <div className="py-4 px-4 flex flex-col gap-4 flex-1">
                                     <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">{course.title}</h3>
-                                    <p className="text-gray-400 mb-4 text-sm md:text-base">{course.overview}</p>
+                                    <p className="text-gray-400 mb-4 text-sm md:text-base line-clamp-4">{course.overview}</p>
                                     <div className="text-gray-300 text-sm md:text-lg py-2 px-4 border rounded-xl mb-2 bg-slate-900">
                                         <span className="font-semibold">Duration:</span> {course.duration}
                                     </div>
@@ -339,30 +333,33 @@ function MitreAttack() {
                 {/* Text Content Section */}
                 <div className="w-full lg:w-1/2 p-6 lg:p-12">
                     <h1 className="text-2xl lg:text-3xl font-semibold">
-                        Strengthen Your Defenses
+                    Strengthen Your Salesforce Skills
                     </h1>
                     <p className="flex mt-4 gap-4">
-                        <IoMdCheckmarkCircleOutline className="text-xl lg:text-2xl text-green-500" />
+                        <img src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/644bdcde184757daa5133632_Group%20313.svg" alt="" />
                         <span className="text-gray-400 text-sm lg:text-base">
-                            Be prepared to tackle the latest security threats with threat-informed training.
+                        Be prepared to tackle the latest business challenges with comprehensive Salesforce training.
                         </span>
                     </p>
                     <p className="flex mt-4 gap-4">
-                        <IoMdCheckmarkCircleOutline className="text-xl lg:text-2xl text-green-500" />
+                        <img src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/644bdcde184757daa5133632_Group%20313.svg" alt="" />
                         <span className="text-gray-400 text-sm lg:text-base">
-                            Cybrary’s exclusive course offerings aligned to the MITRE-ATT&CK Framework will empower you to level up your analytical and hands-on skills.
+                        FortifyLearning's exclusive course offerings aligned with the Salesforce ecosystem will empower
+                        you to level up your administrative, analytical, and hands-on skills
                         </span>
                     </p>
                     <p className="flex mt-4 gap-4">
-                        <IoMdCheckmarkCircleOutline className="text-xl lg:text-2xl text-green-500" />
+                        <img src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/644bdcde184757daa5133632_Group%20313.svg" alt="" />
                         <span className="text-gray-400 text-sm lg:text-base">
-                            Adopt innovative strategies for conducting threat hunts, emulating adversaries, enhancing detections, and performing CTI analysis.
+                        Adopt innovative strategies for managing customer relationships, optimizing sales processes,
+                        enhancing service delivery, and performing data analysis
                         </span>
                     </p>
                     <p className="flex mt-4 gap-4">
-                        <IoMdCheckmarkCircleOutline className="text-xl lg:text-2xl text-green-500" />
+                        <img src="https://cdn.prod.website-files.com/63eef15e3ff8fd318e9a6888/644bdcde184757daa5133632_Group%20313.svg" alt="" />
                         <span className="text-gray-400 text-sm lg:text-base">
-                            Get even more tactical, hands-on experience in our Threat Actor Campaign courses focused on detecting real-world adversary techniques.
+                        Get even more practical, hands-on experience in our Salesforce Certification courses focused
+                        on real-world applications and techniques
                         </span>
                     </p>
                     <NavLink to="/demo-request">
