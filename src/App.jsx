@@ -23,6 +23,7 @@ import GrafanaDirectory from "./pages/course/GrafanaDirectory";
 import AtlassianBitbucket from "./pages/course/AtlassianBitbucket ";
 import ApacheHttpd from "./pages/course/ApacheHttpd";
 import SkillsPath from "./pages/careerpath/SkillsPath";
+import Careers from "./pages/Careers";
 
 function App() {
   const location = useLocation();
@@ -54,6 +55,7 @@ function App() {
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/instructors" element={<Instructors />} />
+          <Route path="/careers" element={<Careers />} />
         </Route>
         <Route path="/login2" element={<Login2 />} />
         <Route path="/forum" element={<Forum />} />

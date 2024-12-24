@@ -1,4 +1,10 @@
-/* Target the dropdown container */
+console.log("Dropdown container styles loaded.");
+console.log("Dropdown item styles loaded.");
+console.log("Dropdown submenu styles loaded.");
+console.log("Dropdown menu styles loaded.");
+console.log("Dropdown hover styles loaded.");
+console.log("Custom submenu styles loaded.");
+console.log("Custom submenu submenu styles loaded.");/* Target the dropdown container */
 .dropdowns .dropdown-container {
   color: white;
   transition: color 0.3s ease-in;
